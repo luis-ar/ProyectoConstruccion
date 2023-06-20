@@ -13,7 +13,7 @@ const Filtro = () => {
   const [filtro, guardarFiltro] = useState("");
 
   useEffect(() => {
-    if (filtro !== "regreso") {
+    if (filtro !== "regreso" && filtro !== "") {
       //redireccionar a /buscar
       Router.push({
         pathname: "/filtro",
