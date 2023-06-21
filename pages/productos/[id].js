@@ -67,7 +67,7 @@ const Producto = () => {
       };
       obtenerProducto();
     }
-  }, [id]);
+  }, [id, producto]);
 
   if (Object.keys(producto).length === 0 && !error) return <Spinner />;
 
