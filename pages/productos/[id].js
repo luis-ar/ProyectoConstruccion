@@ -173,7 +173,7 @@ const Producto = () => {
     }
     try {
       const docRef = doc(firebase.db, "productos", `${id}`);
-      deleteDoc(docRef);
+      await deleteDoc(docRef);
       router.push("/");
     } catch (error) {
       console.log("error");
