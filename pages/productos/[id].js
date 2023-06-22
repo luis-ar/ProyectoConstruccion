@@ -41,6 +41,8 @@ const Producto = () => {
   const [error, guardarError] = useState(false);
   const [comentario, guardarComentario] = useState({});
   const [consultarDB, guardarConsultarDB] = useState(true);
+  const [inputComentario, SetInputComentario] = useState("");
+
   //routing para obtener el id actual
   const router = useRouter();
   const {
@@ -121,6 +123,7 @@ const Producto = () => {
       ...comentario,
       [e.target.name]: e.target.value,
     });
+    SetInputComentario(e.target.value);
   };
 
   //identifica si el comentario es del creador del producto
@@ -154,6 +157,7 @@ const Producto = () => {
       comentarios: nuevosComentarios,
     });
     guardarConsultarDB(true); //hay un conentario, por lo tanto consultar a la db
+    SetInputComentario("");
   };
 
   //funcion que revisa que el creador del producto sea el mismo que esta autenticado
@@ -214,6 +218,7 @@ const Producto = () => {
                         <input
                           type="text"
                           name="mensaje"
+                          value={inputComentario}
                           onChange={comentariosChange}
                         />
                       </Campo>

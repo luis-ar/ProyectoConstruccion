@@ -66,6 +66,11 @@ const Layout = (props) => {
           referrerpolicy="no-referrer"
         />
         <link
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+          rel="stylesheet"
+        />
+
+        <link
           href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@300;400;700&family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"
         />

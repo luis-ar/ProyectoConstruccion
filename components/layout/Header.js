@@ -6,8 +6,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Boton from "../ui/Boton";
 import { FirebaseContext } from "../../firebase";
-import Filtro from "../ui/Filtro";
-
+import BarraFiltro from "../ui/BarraFiltro";
 const ContenedorHeader = styled.div`
   max-width: 1200px;
   width: 95%;
@@ -29,68 +28,70 @@ const Logo = styled.div`
 const Header = () => {
   const { usuario, firebase } = useContext(FirebaseContext);
   return (
-    <header
-      css={css`
-        border-bottom: 2px solid var(--gris3);
-        padding: 1rem 0;
-      `}
-    >
-      <ContenedorHeader>
-        <div
-          css={css`
-            display: flex;
-            align-items: center;
-          `}
-        >
-          <Link href="/">
-            <Logo>P</Logo>
-          </Link>
-          {/* Buscador aqui */}
-          <Buscar />
-          <Filtro />
+    <>
+      <header
+        css={css`
+          border-bottom: 2px solid var(--gris3);
+          padding: 1rem 0;
+        `}
+      >
+        <ContenedorHeader>
+          <div
+            css={css`
+              display: flex;
+              align-items: center;
+            `}
+          >
+            <Link href="/">
+              <Logo>P</Logo>
+            </Link>
+            {/* Buscador aqui */}
+            <Buscar />
 
-          {/* Nav aqui */}
-          <Navegacion />
-        </div>
+            {/* Nav aqui */}
+            <Navegacion />
+          </div>
 
-        <div
-          css={css`
-            display: flex;
-            align-items: center;
-          `}
-        >
-          {usuario ? (
-            <>
-              {/* Menu de administracion */}
-              <p
-                css={css`
-                  margin-right: 2rem;
-                `}
-              >
-                Hola: {usuario.displayName}
-              </p>
-              <Boton
-                bgColor="true"
-                onClick={() => {
-                  firebase.cerrarSesion();
-                }}
-              >
-                Cerrar Sesion
-              </Boton>
-            </>
-          ) : (
-            <>
-              <Link href="/Login">
-                <Boton bgColor="true">Login</Boton>
-              </Link>
-              <Link href="/crear-cuenta">
-                <Boton>Crear Cuenta</Boton>
-              </Link>
-            </>
-          )}
-        </div>
-      </ContenedorHeader>
-    </header>
+          <div
+            css={css`
+              display: flex;
+              align-items: center;
+            `}
+          >
+            {usuario ? (
+              <>
+                {/* Menu de administracion */}
+                <p
+                  css={css`
+                    margin-right: 2rem;
+                  `}
+                >
+                  Hola: {usuario.displayName}
+                </p>
+                <Boton
+                  bgColor="true"
+                  onClick={() => {
+                    firebase.cerrarSesion();
+                  }}
+                >
+                  Cerrar Sesion
+                </Boton>
+              </>
+            ) : (
+              <>
+                <Link href="/Login">
+                  <Boton bgColor="true">Login</Boton>
+                </Link>
+                <Link href="/crear-cuenta">
+                  <Boton>Crear Cuenta</Boton>
+                </Link>
+              </>
+            )}
+          </div>
+        </ContenedorHeader>
+      </header>
+      <BarraFiltro />
+    </>
   );
 };
 
