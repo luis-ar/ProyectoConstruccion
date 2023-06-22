@@ -16,10 +16,7 @@ const filtro = () => {
   useEffect(() => {
     const busqueda = q !== undefined && q.toLowerCase();
     const filtro = productos.filter((producto) => {
-      return (
-        producto.categoria.toLowerCase().includes(busqueda) ||
-        producto.descripcion.toLowerCase().includes(busqueda)
-      );
+      return producto.categoria.toLowerCase().includes(busqueda);
     });
     guardarResultado(filtro);
   }, [q, productos]);
