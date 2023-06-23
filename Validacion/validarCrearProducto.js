@@ -32,6 +32,12 @@ const validarCrearProducto = (valores) => {
     errores.categoria = "Seleccione una categoria de su producto";
   }
 
+  //validar categoria
+
+  if (!valores.precio) {
+    errores.precio = "Agrega un precio a tu producto";
+  }
+
   return errores;
 };
 

@@ -25,6 +25,14 @@ const Titulo = styled.a`
     cursor: pointer;
   }
 `;
+const Precio = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 5px;
+  span {
+    font-size: 15px;
+  }
+`;
 
 const TextoDescripcion = styled.p`
   font-size: 1.6rem;
@@ -89,7 +97,15 @@ const DetallesProducto = ({ producto }) => {
     url,
     urlimagen,
     votos,
+    precio,
   } = producto;
+
+  const formatearPresupuesto = (cantidad) => {
+    return cantidad.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+  };
   return (
     <Producto>
       <DescripcionProducto>
@@ -101,6 +117,9 @@ const DetallesProducto = ({ producto }) => {
             <Titulo>{nombre}</Titulo>
           </Link>
           <TextoDescripcion>{descripcion}</TextoDescripcion>
+          <Precio>
+            <span>Precio: </span> {formatearPresupuesto(parseInt(precio))}
+          </Precio>
           <Comentarios>
             <div>
               <img src="/static/img/comentario.png" />

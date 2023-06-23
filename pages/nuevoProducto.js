@@ -23,6 +23,7 @@ const STATE_INICIAL = {
   url: "",
   descripcion: "",
   categoria: "",
+  precio: "",
 };
 
 const nuevoProducto = () => {
@@ -58,6 +59,7 @@ const nuevoProducto = () => {
       },
       haVotado: [],
       categoria,
+      precio,
     };
     //insertarlo en la base de datos
     // firebase.db.collection("productos").add(producto);
@@ -104,7 +106,8 @@ const nuevoProducto = () => {
   const { valores, errores, handleSumit, handleChange, handleBlur } =
     useValidacion(STATE_INICIAL, validarCrearProducto, crearProducto);
   //OnBlur -> cuando salgo del input lo valida sin la necesidad de presion el boton de crear cuenta
-  const { nombre, empresa, imagen, url, descripcion, categoria } = valores;
+  const { nombre, empresa, imagen, url, descripcion, categoria, precio } =
+    valores;
 
   return (
     <div>
@@ -205,6 +208,23 @@ const nuevoProducto = () => {
                     <option value="oficina">Oficina</option>
                     <option value="localComercial">Local Comercial</option>
                   </select>
+                </Campo>
+                {errores.precio && (
+                  <ErrorMostrar>{errores.precio}</ErrorMostrar>
+                )}
+
+                <Campo>
+                  <label htmlFor="url">Precio</label>
+                  <input
+                    type="number"
+                    id="precio"
+                    name="precio"
+                    value={precio}
+                    min={0}
+                    placeholder="Precio del Producto"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
                 </Campo>
               </fieldset>
               <fieldset>
