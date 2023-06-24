@@ -5,6 +5,7 @@ import { FirebaseContext } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import DetallesProducto from "../components/layout/DetallesProducto";
 import useProductos from "../Hooks/useProductos";
+import Slider from "@/components/ui/Slider";
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
 
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <div>
       <Layout>
+        <Slider/>
         <div className="listado-productos">
           <div className="contenedor">
             <ul className="bg-white">
