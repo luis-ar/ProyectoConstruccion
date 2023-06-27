@@ -21,7 +21,7 @@ const ContenedorHijo = styled.div`
 const ContenedorPadre = styled.div`
   border-bottom: 2px solid var(--gris3);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-evenly;
   grid-gap: 4px;
 `;
@@ -79,6 +79,14 @@ const BarraFiltro = () => {
           }}
         >
           <i className="bx bxs-landmark"></i> <h2>Terreno</h2>
+        </ContenedorHijo>
+        <ContenedorHijo
+          onClick={() => {
+            Router.push("/mapa");
+          }}
+        >
+          <i class="bx bxs-map"></i>
+          <h2>Habilitación Urbana</h2>
         </ContenedorHijo>
       </ContenedorPadre>
     </>
