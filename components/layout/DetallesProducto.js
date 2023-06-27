@@ -85,6 +85,11 @@ const Votos = styled.div`
     font-weight: 700;
   }
 `;
+const ContenedorImagen = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const DetallesProducto = ({ producto }) => {
   const {
@@ -109,9 +114,9 @@ const DetallesProducto = ({ producto }) => {
   return (
     <Producto>
       <DescripcionProducto>
-        <div>
+        <ContenedorImagen>
           <Imagen src={urlimagen} />
-        </div>
+        </ContenedorImagen>
         <div>
           <Link href="/productos/[id]" as={`/productos/${id}`}>
             <Titulo>{nombre}</Titulo>
