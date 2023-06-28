@@ -17,6 +17,7 @@ import { es } from "date-fns/locale";
 import { Campo, InputSubmit } from "../../components/ui/Formulario";
 import Boton from "../../components/ui/Boton1";
 import Spinner from "../../components/ui/Spinner";
+import MostrarMapa from "@/components/ui/MostrarMapa";
 
 const ContenedorProducto = styled.div`
   @media (min-width: 768px) {
@@ -35,6 +36,12 @@ const CreadorProducto = styled.p`
   text-align: center;
 `;
 
+const Mapa = styled.div`
+  background-color: red;
+  width: 100%;
+  height: 300px;
+  border: 4px solid black;
+`;
 const Producto = () => {
   //state del componente
   const [producto, guardarProducto] = useState({});
@@ -284,6 +291,9 @@ const Producto = () => {
                   </p>
                   {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
                 </div>
+                <Mapa>
+                  <MostrarMapa />
+                </Mapa>
               </aside>
             </ContenedorProducto>
             {puedeBorrar() && (
