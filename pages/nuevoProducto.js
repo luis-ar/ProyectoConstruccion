@@ -14,7 +14,6 @@ import Router, { useRouter } from "next/router";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytesResumable } from "@firebase/storage";
 import Error404 from "@/components/layout/404";
-import MostrarMapa from "@/components/ui/MostrarMapa";
 
 //Validaciones
 import useValidacion from "../Hooks/useValidacion";

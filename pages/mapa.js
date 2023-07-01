@@ -9,7 +9,6 @@ function MiPagina() {
           height: 76vh;
         `}
       >
-        <MostrarMapa></MostrarMapa>
       </div>
     </Layout>
   );
