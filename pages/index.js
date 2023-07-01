@@ -12,14 +12,18 @@ import Slider from "@/components/ui/Slider";
 export default function Home() {
   const { productos } = useProductos("creado");
 
+  const datosFiltrados = productos.filter(
+    (item) => item.categoria !== "habilitacionUrbana"
+  );
+
   return (
     <div>
       <Layout>
-        <Slider/>
+        <Slider />
         <div className="listado-productos">
           <div className="contenedor">
             <ul className="bg-white">
-              {productos.map((producto) => (
+              {datosFiltrados.map((producto) => (
                 <DetallesProducto key={producto.id} producto={producto} />
               ))}
             </ul>

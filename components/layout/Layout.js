@@ -58,8 +58,6 @@ const Layout = (props) => {
 
       <Head>
         <title>Product Hunt Firebase Next</title>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB2CViIy1tu-h-NbBqKkNT97q68K6jgww"></script>
-
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"

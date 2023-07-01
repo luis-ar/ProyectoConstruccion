@@ -82,7 +82,7 @@ const BarraFiltro = () => {
         </ContenedorHijo>
         <ContenedorHijo
           onClick={() => {
-            Router.push("/mapa");
+            guardarFiltro("habilitacionUrbana");
           }}
         >
           <i class="bx bxs-map"></i>

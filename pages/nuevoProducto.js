@@ -7,15 +7,19 @@ import {
 import Layout from "../components/layout/Layout";
 import React, { useState, useContext } from "react";
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+
 import { FirebaseContext } from "../firebase";
 import Router, { useRouter } from "next/router";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytesResumable } from "@firebase/storage";
 import Error404 from "@/components/layout/404";
+import MostrarMapa from "@/components/ui/MostrarMapa";
 
 //Validaciones
 import useValidacion from "../Hooks/useValidacion";
 import validarCrearProducto from "../Validacion/validarCrearProducto";
+import MapPage from "@/components/ui/MapaPrueba";
 const STATE_INICIAL = {
   nombre: "",
   empresa: "",
@@ -25,13 +29,17 @@ const STATE_INICIAL = {
   categoria: "",
   precio: "",
 };
-
+const Mapa = styled.div`
+  width: 100%;
+  height: 30vh;
+`;
 const nuevoProducto = () => {
   // States para la subida de la imagen
   const [uploading, setUploading] = useState(false);
   const [urlimagen, setURLImage] = useState("");
   ///
   const [error, guardarError] = useState(false);
+  const [cordenadas, setCordenadas] = useState({});
   //extra
   //context con las operaciones crud de firebase
 
@@ -60,6 +68,7 @@ const nuevoProducto = () => {
       haVotado: [],
       categoria,
       precio,
+      cordenadas,
     };
     //insertarlo en la base de datos
     // firebase.db.collection("productos").add(producto);
@@ -207,6 +216,9 @@ const nuevoProducto = () => {
                     <option value="casa">Casa</option>
                     <option value="oficina">Oficina</option>
                     <option value="localComercial">Local Comercial</option>
+                    <option value="habilitacionUrbana">
+                      Habilitación Urbana
+                    </option>
                   </select>
                 </Campo>
                 {errores.precio && (
@@ -225,6 +237,13 @@ const nuevoProducto = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
+                </Campo>
+                {console.log(cordenadas)}
+                <Campo>
+                  <label htmlFor="url">Ubicación</label>
+                  <Mapa>
+                    <MapPage setCordenadas={setCordenadas} />
+                  </Mapa>
                 </Campo>
               </fieldset>
               <fieldset>

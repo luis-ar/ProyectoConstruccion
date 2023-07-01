@@ -17,7 +17,7 @@ import { es } from "date-fns/locale";
 import { Campo, InputSubmit } from "../../components/ui/Formulario";
 import Boton from "../../components/ui/Boton1";
 import Spinner from "../../components/ui/Spinner";
-import MostrarMapa from "@/components/ui/MostrarMapa";
+import MapPage from "@/components/ui/MapaPrueba";
 
 const ContenedorProducto = styled.div`
   @media (min-width: 768px) {
@@ -37,7 +37,6 @@ const CreadorProducto = styled.p`
 `;
 
 const Mapa = styled.div`
-  background-color: red;
   width: 100%;
   height: 300px;
   border: 4px solid black;
@@ -91,6 +90,7 @@ const Producto = () => {
     votos,
     creador,
     haVotado,
+    cordenadas,
   } = producto;
 
   //administrar y validar votos
@@ -292,7 +292,7 @@ const Producto = () => {
                   {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
                 </div>
                 <Mapa>
-                  <MostrarMapa />
+                  <MapPage cordenadas={cordenadas} />
                 </Mapa>
               </aside>
             </ContenedorProducto>
