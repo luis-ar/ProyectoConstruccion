@@ -18,6 +18,7 @@ import { Campo, InputSubmit } from "../../components/ui/Formulario";
 import Boton from "../../components/ui/Boton1";
 import Spinner from "../../components/ui/Spinner";
 import MapPage from "@/components/ui/MapaPrueba";
+import MapaAnimada from "@/components/ui/MapaAnimada";
 
 const ContenedorProducto = styled.div`
   @media (min-width: 768px) {
@@ -91,6 +92,7 @@ const Producto = () => {
     creador,
     haVotado,
     cordenadas,
+    categoria,
   } = producto;
 
   //administrar y validar votos
@@ -294,6 +296,7 @@ const Producto = () => {
                 <Mapa>
                   <MapPage cordenadas={cordenadas} />
                 </Mapa>
+                {categoria === "habilitacionUrbana" && <MapaAnimada />}
               </aside>
             </ContenedorProducto>
             {puedeBorrar() && (
