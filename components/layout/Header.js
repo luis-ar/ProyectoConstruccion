@@ -49,7 +49,10 @@ const BarraLateral = styled.div`
     }
   }
   @media (max-width: 490px) {
-    width: 50%;
+    width: 32%;
+    a {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -155,8 +158,8 @@ const Header = () => {
                   <Boton
                     bgColor="true"
                     css={css`
-                    margin-right: 10px !important;
-                    padding: 6px 6px !important;
+                      margin-right: 10px !important;
+                      padding: 6px 6px !important;
                     `}
                   >
                     Login
