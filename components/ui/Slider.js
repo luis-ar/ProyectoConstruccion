@@ -12,12 +12,18 @@ const Contenedor = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  @media (max-width: 500px) {
+    height: 300px;
+  }
 `;
 const Image = styled.img`
   width: 100%;
   height: 460px;
   object-fit: cover;
   cursor: pointer;
+  @media (max-width: 500px) {
+    height: 280px;
+  }
 `;
 const TextoInformativo = styled.div`
   background-color: black;

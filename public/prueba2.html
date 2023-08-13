@@ -1663,6 +1663,7 @@
       const fullscreenBtn = document.getElementById("fullscreenBtn");
       const imagenesLight = document.querySelector(".agregar-imagen");
       const contenedorLight = document.querySelector(".imagen-light");
+      let amplio;
       /// funciones
       const formatearPresupuesto = (cantidad) => {
         return cantidad.toLocaleString("en-US", {
@@ -1694,13 +1695,15 @@
 
       parque1.forEach((lote) => {
         lote.addEventListener("click", async (e) => {
-          const id = lote.id;
-          await localStorage.setItem("id", id);
-          imagenesLight.src = "../static/img/casa.jpg";
-          contenedorLight.classList.toggle("show");
-          imagenesLight.classList.toggle("showImage");
-          const datoGuardado = localStorage.getItem("id");
-          // Esperar a que los datos estén cargados
+          if (amplio) {
+            const id = lote.id;
+            await localStorage.setItem("id", id);
+            imagenesLight.src = "../static/img/casa.jpg";
+            contenedorLight.classList.toggle("show");
+            imagenesLight.classList.toggle("showImage");
+            const datoGuardado = localStorage.getItem("id");
+            // Esperar a que los datos estén cargados
+          }
         });
       });
 
@@ -1718,7 +1721,9 @@
           // De lo contrario, salir del modo de pantalla completa
           if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
+            amplio = true;
           } else {
+            amplio = false;
             document.exitFullscreen();
           }
         });

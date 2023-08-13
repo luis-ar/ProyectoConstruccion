@@ -53,6 +53,7 @@ const Layout = (props) => {
           img {
             max-width: 100%;
           }
+          
         `}
       />
 

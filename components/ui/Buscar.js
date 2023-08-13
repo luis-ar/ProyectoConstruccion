@@ -8,7 +8,14 @@ const InputText = styled.input`
   background-color: white;
   border: 1px solid var(--gris3);
   padding: 1rem;
-  min-width: 300px;
+  width: 180px;
+  @media (min-width: 700px) {
+    min-width: 300px;
+  }
+  @media (max-width: 400px) {
+    font-size: 13px;
+    width: 150px;
+  }
 `;
 const InputSubmit = styled.button`
   height: 3rem;
@@ -26,6 +33,7 @@ const InputSubmit = styled.button`
   &:hover {
     cursor: pointer;
   }
+  
 `;
 
 const Buscar = () => {

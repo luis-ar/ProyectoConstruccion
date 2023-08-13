@@ -21,7 +21,6 @@ export const Campo = styled.div`
     font-size: 1.8rem;
   }
 
-  input,
   textarea,
   select {
     flex: 1;
@@ -32,6 +31,14 @@ export const Campo = styled.div`
   }
   textarea {
     height: 400px;
+  }
+  input {
+    width: 150px;
+    padding: 1rem;
+    flex: 1;
+    @media (min-width: 400px) {
+      flex: 1;
+    }
   }
 `;
 

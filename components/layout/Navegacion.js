@@ -16,6 +16,9 @@ const Nav = styled.nav`
     &:last-of-type {
       margin-right: 0rem;
     }
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 `;
 const Navegacion = () => {

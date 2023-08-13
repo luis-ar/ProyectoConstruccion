@@ -24,6 +24,13 @@ const ContenedorPadre = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-evenly;
   grid-gap: 4px;
+  position: relative;
+  margin-bottom: 12vh;
+  top: 12vh;
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr); /* Dos columnas de igual ancho */
+    grid-template-rows: repeat(2, 1fr); /* Tres filas de igual altura */
+  }
 `;
 
 const BarraFiltro = () => {
