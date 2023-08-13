@@ -166,7 +166,14 @@ const Header = () => {
                   </Boton>
                 </Link>
                 <Link href="/crear-cuenta">
-                  <Boton>Crear Cuenta</Boton>
+                  <Boton
+                    css={css`
+                      margin-right: 10px !important;
+                      padding: 6px 6px !important;
+                    `}
+                  >
+                    Crear Cuenta
+                  </Boton>
                 </Link>
               </>
             )}
