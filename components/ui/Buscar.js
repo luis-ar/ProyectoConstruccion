@@ -9,7 +9,7 @@ const InputText = styled.input`
   border: 1px solid var(--gris3);
   padding: 1rem;
   width: 180px;
-  @media (min-width: 700px) {
+  @media (min-width: 550px) {
     min-width: 300px;
   }
   @media (max-width: 400px) {

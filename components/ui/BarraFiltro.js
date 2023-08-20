@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Router from "next/router";
-
 const ContenedorHijo = styled.div`
   text-align: center;
   i {
@@ -92,7 +91,7 @@ const BarraFiltro = () => {
             guardarFiltro("habilitacionUrbana");
           }}
         >
-          <i class="bx bxs-map"></i>
+          <i className="bx bxs-map"></i>
           <h2>Habilitación Urbana</h2>
         </ContenedorHijo>
       </ContenedorPadre>

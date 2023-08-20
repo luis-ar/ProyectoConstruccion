@@ -53,7 +53,6 @@ const Layout = (props) => {
           img {
             max-width: 100%;
           }
-          
         `}
       />
 
@@ -75,8 +74,8 @@ const Layout = (props) => {
           href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@300;400;700&family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"
         />
-
         <link href="/static/CSS/app.css" rel="stylesheet" />
+        
       </Head>
 
       <Header />
