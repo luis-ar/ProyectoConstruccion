@@ -44,6 +44,9 @@
 .contenedor ul li:hover {
   transform: translateX(0);
 }
+.contenedor ul .ocultar {
+  transform: translateX(0);
+}
 .contenedor ul li a {
   font-weight: bold;
   color: #fff;
