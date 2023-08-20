@@ -103,7 +103,7 @@ body {
   transform: translateX(calc(25% * 1));
 }
 .navigation ul li:nth-child(2).active ~ .contenedorIndicator {
-  transform: translateX(calc(173% * 1));
+  transform: translateX(calc(175% * 1));
 }
 .navigation ul li:nth-child(1).active ~ .contenedorIndicator1 {
   transform: translateX(calc(100% * 0));

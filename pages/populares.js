@@ -5,6 +5,8 @@ import { FirebaseContext } from "../firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import DetallesProducto from "../components/layout/DetallesProducto";
 import useProductos from "../Hooks/useProductos";
+import BarraRedes from "@/components/ui/BarraRedes";
+BarraRedes;
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
 
@@ -22,6 +24,7 @@ export default function populares() {
             </ul>
           </div>
         </div>
+        <BarraRedes />
       </Layout>
     </div>
   );
