@@ -43,9 +43,7 @@
 }
 .contenedor ul li:hover {
   transform: translateX(0);
-}
-.contenedor ul .ocultar {
-  transform: translateX(0);
+
 }
 .contenedor ul li a {
   font-weight: bold;
@@ -62,4 +60,23 @@
   background: #fff;
   font-size: 20px;
   margin-right: 30px;
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(105px);
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media only screen and (max-width:600px){
+  .contenedor ul li:hover {
+    transform: translateX(0);
+    animation: slidein 1s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
