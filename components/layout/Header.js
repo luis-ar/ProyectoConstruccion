@@ -114,7 +114,12 @@ const Header = () => {
             >
               <i class="bx bx-menu"></i>
             </div> */}
-            <Link href="/">
+            <Link
+              href="/"
+              onClick={() => {
+                localStorage.clear();
+              }}
+            >
               <Logo>P</Logo>
             </Link>
             {/* Buscador aqui */}

@@ -64,16 +64,11 @@ const SliderBarra = () => {
       });
     } else if (filtro === "regreso") {
       Router.push("/");
+      localStorage.clear();
     }
   }, [filtro]);
 
-  let valorInicial = 0; // Valor por defecto
   const router = useRouter();
-
-  if (typeof window !== "undefined") {
-    valorInicial = localStorage.getItem("clave") || "lista1";
-  }
-
   const [activeDiv, setActiveDiv] = useState(0);
 
   useEffect(() => {

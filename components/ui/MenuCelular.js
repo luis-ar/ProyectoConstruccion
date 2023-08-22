@@ -47,6 +47,7 @@ const MenuCelular = () => {
                 onClick={(e) => {
                   setIsActive("lista1");
                   localStorage.setItem("clave", "lista1");
+                  localStorage.removeItem("indice");
                 }}
               >
                 <span className={styles.icon}>
@@ -65,6 +66,7 @@ const MenuCelular = () => {
                 onClick={(e) => {
                   setIsActive("lista2");
                   localStorage.setItem("clave", "lista2");
+                  localStorage.removeItem("indice");
                 }}
               >
                 <span className={styles.icon}>
@@ -85,6 +87,7 @@ const MenuCelular = () => {
                   onClick={(e) => {
                     setIsActive("lista3");
                     localStorage.setItem("clave", "lista3");
+                    localStorage.removeItem("indice");
                   }}
                 >
                   <span className={styles.icon}>
