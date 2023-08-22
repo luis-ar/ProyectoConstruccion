@@ -8,6 +8,7 @@ import Boton from "../ui/Boton";
 import { FirebaseContext } from "../../firebase";
 import BarraFiltro from "../ui/BarraFiltro";
 import MenuCelular from "../ui/MenuCelular";
+import SliderBarra from "../ui/SliderBarra";
 const ContenedorHeader = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -194,7 +195,7 @@ const Header = () => {
         </BarraLateral>
       </div> */}
 
-      <BarraFiltro />
+      <SliderBarra />
       <div
         css={css`
           position: fixed;

@@ -7,6 +7,7 @@ import DetallesProducto from "../components/layout/DetallesProducto";
 import useProductos from "../Hooks/useProductos";
 import Slider from "@/components/ui/Slider";
 import BarraRedes from "@/components/ui/BarraRedes";
+import SliderBarra from "@/components/ui/SliderBarra";
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
 
