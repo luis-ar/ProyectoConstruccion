@@ -3,6 +3,7 @@ import Layout from "../components/layout/Layout";
 import { useRouter } from "next/router";
 import DetallesProducto from "../components/layout/DetallesProducto";
 import useProductos from "../Hooks/useProductos";
+import BarraRedes from "@/components/ui/BarraRedes";
 const filtro = () => {
   //leer lo q me manda del querry en el link
 
@@ -32,6 +33,7 @@ const filtro = () => {
             </ul>
           </div>
         </div>
+        <BarraRedes />
       </Layout>
     </div>
   );
