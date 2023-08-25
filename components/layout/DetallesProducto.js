@@ -6,7 +6,7 @@ import Link from "next/link";
 const Producto = styled.li`
   padding: 4rem;
 
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 5px solid black;
   @media (min-width: 700px) {
     display: flex;
     justify-content: space-between;

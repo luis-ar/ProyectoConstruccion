@@ -10,17 +10,17 @@ const Lista = styled.div`
   text-align: center;
 
   i {
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 6px;
   }
   h2 {
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: 200;
     margin-bottom: 3px;
   }
 `;
 const Content = styled.div`
-  margin-top: 12vh;
-
+  margin-top: 10vh;
   .css-qen1cq-SliderBarra {
     height: auto;
   }
@@ -91,7 +91,7 @@ const SliderBarra = () => {
             gap: 10,
             pagination: false,
             isNavigation: true,
-            perPage: 3,
+            perPage: 4,
             arrows: true,
             focus: "center",
             perMove: 1,

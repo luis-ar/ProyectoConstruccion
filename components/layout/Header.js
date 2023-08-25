@@ -9,6 +9,7 @@ import { FirebaseContext } from "../../firebase";
 import BarraFiltro from "../ui/BarraFiltro";
 import MenuCelular from "../ui/MenuCelular";
 import SliderBarra from "../ui/SliderBarra";
+import BarraSimple from "../ui/BarraSimple";
 const ContenedorHeader = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -208,7 +209,7 @@ const Header = () => {
           z-index: 1;
         `}
       >
-        <MenuCelular />
+        <BarraSimple />
       </div>
     </>
   );

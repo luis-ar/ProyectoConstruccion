@@ -264,7 +264,13 @@ const nuevoProducto = () => {
               </fieldset>
 
               {error && <ErrorMostrar>{error}</ErrorMostrar>}
-              <InputSubmit type="submit" value="Crear Producto" />
+              <InputSubmit
+                type="submit"
+                value="Crear Producto"
+                css={css`
+                  margin-bottom: 65px;
+                `}
+              />
             </Formulario>
           </>
         )}
