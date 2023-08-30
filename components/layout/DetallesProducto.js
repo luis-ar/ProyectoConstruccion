@@ -11,7 +11,6 @@ const Producto = styled.li`
   background-color: white;
 
   :last-child {
-    border-bottom: 5px solid #8e8e8e;
     margin-bottom: 5px;
   }
 
