@@ -5,14 +5,10 @@ import { es } from "date-fns/locale";
 import Link from "next/link";
 const Producto = styled.li`
   padding: 4rem;
-
-  border-top: 5px solid #8e8e8e;
-  border-right: 5px solid #8e8e8e;
-  border-left: 5px solid #8e8e8e;
-
-  :nth-child(1) {
-    border-bottom: none;
-  }
+  border-radius: 20px;
+  border: 5px solid #d4d3d2;
+  margin-bottom: 7px;
+  background-color: white;
 
   :last-child {
     border-bottom: 5px solid #8e8e8e;
@@ -132,36 +128,46 @@ const DetallesProducto = ({ producto }) => {
     });
   };
   return (
-    <Producto>
-      <DescripcionProducto>
-        <ContenedorImagen>
-          <Imagen src={urlimagen} />
-        </ContenedorImagen>
-        <div>
-          <Link href="/productos/[id]" as={`/productos/${id}`}>
-            <Titulo>{nombre}</Titulo>
-          </Link>
-          <TextoDescripcion>{descripcion}</TextoDescripcion>
-          <Precio>
-            <span>Precio: </span> {formatearPresupuesto(parseInt(precio))}
-          </Precio>
-          <Comentarios>
-            <div>
-              <img src="/static/img/comentario.png" />
-              <p>{comentarios.length} Comentarios</p>
-            </div>
-          </Comentarios>
-          <p>
-            Publicado hace :{" "}
-            {formatDistanceToNow(new Date(creado), { locale: es })}
-          </p>
-        </div>
-      </DescripcionProducto>
-      <Votos>
-        <div>&#9650;</div>
-        <p>{votos}</p>
-      </Votos>
-    </Producto>
+    <>
+      <Producto>
+        <DescripcionProducto>
+          <ContenedorImagen>
+            <Imagen src={urlimagen} />
+          </ContenedorImagen>
+          <div>
+            <Link href="/productos/[id]" as={`/productos/${id}`}>
+              <Titulo>{nombre}</Titulo>
+            </Link>
+            <TextoDescripcion>{descripcion}</TextoDescripcion>
+            <Precio>
+              <span>Precio: </span> {formatearPresupuesto(parseInt(precio))}
+            </Precio>
+            <Comentarios>
+              <div>
+                <img src="/static/img/comentario.png" />
+                <p>{comentarios.length} Comentarios</p>
+              </div>
+            </Comentarios>
+            <p className="prueba">
+              Publicado hace :{" "}
+              {formatDistanceToNow(new Date(creado), { locale: es })}
+            </p>
+          </div>
+        </DescripcionProducto>
+        <Votos>
+          <div>&#9650;</div>
+          <p>{votos}</p>
+        </Votos>
+      </Producto>
+      {/* <style jsx>
+        {`
+          .prueba {
+            color: red;
+            
+          }
+        `}
+      </style> */}
+    </>
   );
 };
 

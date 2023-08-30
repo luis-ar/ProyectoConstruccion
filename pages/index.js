@@ -1,13 +1,8 @@
-import styled from "@emotion/styled";
 import Layout from "../components/layout/Layout";
 import React, { useEffect, useState, useContext } from "react";
-import { FirebaseContext } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
 import DetallesProducto from "../components/layout/DetallesProducto";
 import useProductos from "../Hooks/useProductos";
 import Slider from "@/components/ui/Slider";
-import BarraRedes from "@/components/ui/BarraRedes";
-import SliderBarra from "@/components/ui/SliderBarra";
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
 
@@ -24,14 +19,13 @@ export default function Home() {
         <Slider />
         <div className="listado-productos">
           <div className="contenedor">
-            <ul className="bg-white">
+            <ul >
               {datosFiltrados.map((producto) => (
                 <DetallesProducto key={producto.id} producto={producto} />
               ))}
             </ul>
           </div>
         </div>
-        <BarraRedes />
       </Layout>
     </div>
   );

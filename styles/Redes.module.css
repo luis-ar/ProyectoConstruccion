@@ -6,6 +6,7 @@
   bottom: 10%;
   display: flex;
   align-items: end;
+  z-index: 200;
 }
 .contenedor ul {
   margin-left: 0;
@@ -43,7 +44,6 @@
 }
 .contenedor ul li:hover {
   transform: translateX(0);
-
 }
 .contenedor ul li a {
   font-weight: bold;
@@ -72,7 +72,7 @@
   }
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width: 600px) {
   .contenedor ul li:hover {
     transform: translateX(0);
     animation: slidein 1s ease-in-out;

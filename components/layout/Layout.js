@@ -79,6 +79,10 @@ const Layout = (props) => {
           crossOrigin="anonymous"
           referrerpolicy="no-referrer"
         />
+        <script
+          src="https://kit.fontawesome.com/9199bd82d8.js"
+          crossorigin="anonymous"
+        ></script>
       </Head>
 
       <Header />

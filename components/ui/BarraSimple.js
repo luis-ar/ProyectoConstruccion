@@ -113,6 +113,22 @@ const BarraSimple = () => {
             </a>
           </li>
         )}
+        <li>
+          <a
+            href="/nosotros"
+            className={isActive == "lista4" ? "activo" : ""}
+            onClick={(e) => {
+              setIsActive("lista4");
+              localStorage.setItem("clave", "lista4");
+              localStorage.removeItem("indice");
+            }}
+          >
+            <span className="icon">
+              <i class="bx bx-group"></i>
+            </span>
+            <span className="text">Nosotros</span>
+          </a>
+        </li>
       </ul>
     </Contenedor>
   );

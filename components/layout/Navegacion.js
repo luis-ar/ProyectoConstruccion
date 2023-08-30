@@ -40,6 +40,7 @@ const Navegacion = () => {
           <Link href="/nuevoProducto">Nuevo Producto</Link>
         </>
       )}
+      <Link href="/nosotros">Nosotros</Link>
     </Nav>
   );
 };

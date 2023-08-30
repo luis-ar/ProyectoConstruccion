@@ -202,7 +202,6 @@ const Producto = () => {
             <h1
               css={css`
                 text-align: center;
-                margin-top: 5rem;
               `}
             >
               {nombre}
@@ -213,10 +212,21 @@ const Producto = () => {
                   Publicado hace :{" "}
                   {formatDistanceToNow(new Date(creado), { locale: es })}
                 </p>
-                <p>
+                <p
+                  css={css`
+                    margin-bottom: 10px;
+                  `}
+                >
                   Por: {creador.nombre} de {empresa}
                 </p>
-                <img src={urlimagen} />
+                <img
+                  src={urlimagen}
+                  css={css`
+                    border-radius: 20px;
+                    box-shadow: 0 0 10px 1px black;
+                    margin-bottom: 5px;
+                  `}
+                />
                 <p>{descripcion}</p>
 
                 {usuario && (
