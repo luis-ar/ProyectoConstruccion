@@ -35,6 +35,9 @@ const Contenedor = styled.div`
   .activo {
     color: red !important;
   }
+  @media (min-width: 1000px) {
+    display: none;
+  }
 `;
 const BarraSimple = () => {
   let valorInicial = "lista2"; // Valor por defecto

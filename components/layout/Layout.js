@@ -22,6 +22,9 @@ const Layout = (props) => {
           *:before,
           *:after {
             box-sizing: inherit;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
           }
           body {
             font-size: 1.6rem;
@@ -58,13 +61,7 @@ const Layout = (props) => {
 
       <Head>
         <title>Product Hunt Firebase Next</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-          crossOrigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
+
         <link
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
           rel="stylesheet"
@@ -75,7 +72,13 @@ const Layout = (props) => {
           rel="stylesheet"
         />
         <link href="/static/CSS/app.css" rel="stylesheet" />
-        
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossOrigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
       </Head>
 
       <Header />

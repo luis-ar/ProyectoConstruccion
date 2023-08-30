@@ -60,16 +60,27 @@ const ContenedorHeader = styled.div`
 // `;
 
 const Logo = styled.div`
-  color: var(--naranja);
-  font-size: 4rem;
-  font-weight: 700;
-  font-family: "Roboto Slab", serif;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  @media (max-width: 700px) {
-    font-size: 2.5rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
+  .iconoEscritorio {
+    width: 150px;
+    margin-right: 15px;
+    margin-left: 5px;
+  }
+
+  .iconoCelular {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    .iconoEscritorio {
+      display: none;
+    }
+
+    .iconoCelular {
+      display: block;
+      width: 30px;
+      margin-right: 40px;
+      margin-left: 5px;
+    }
   }
 `;
 
@@ -121,7 +132,10 @@ const Header = () => {
                 localStorage.clear();
               }}
             >
-              <Logo>P</Logo>
+              <Logo>
+                <img src="/static/img/logo.png" className="iconoCelular" />
+                <img src="/static/img/future.png" className="iconoEscritorio" />
+              </Logo>
             </Link>
             {/* Buscador aqui */}
             <Buscar />
