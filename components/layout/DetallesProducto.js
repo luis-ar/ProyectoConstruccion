@@ -20,6 +20,10 @@ const Producto = styled.li`
     justify-content: space-between;
     align-items: center;
   }
+  @media (max-width: 550px) {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 `;
 const DescripcionProducto = styled.div`
   flex: 0 1 600px;
@@ -38,6 +42,10 @@ const Titulo = styled.a`
   margin: 0;
   :hover {
     cursor: pointer;
+    color: blue;
+  }
+  @media (max-width: 550px) {
+    font-size: 1.5rem;
   }
 `;
 const Precio = styled.p`
@@ -47,15 +55,25 @@ const Precio = styled.p`
   span {
     font-size: 15px;
   }
+  @media (max-width: 550px) {
+    font-size: 15px;
+    span {
+      font-size: 12px;
+    }
+  }
 `;
 
 const TextoDescripcion = styled.p`
   font-size: 1.6rem;
   margin: 0;
   color: #888;
+  @media (max-width: 550px) {
+    font-size: 1.2rem;
+  }
 `;
 const Comentarios = styled.div`
-  margin-top: 2rem;
+  margin-top: rem;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   div {
@@ -69,6 +87,9 @@ const Comentarios = styled.div`
   img {
     width: 2rem;
     margin-right: 2rem;
+    @media (max-width: 550px) {
+      width: 1.5rem;
+    }
   }
 
   p {
@@ -78,12 +99,19 @@ const Comentarios = styled.div`
     &:last-of-type {
       margin: 0;
     }
+    @media (max-width: 550px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 
 // npm i date-fns
 const Imagen = styled.img`
   width: 200px;
+  box-shadow: 0 0 5px 1px black;
+  @media (max-width: 550px) {
+    width: 150px;
+  }
 `;
 
 const Votos = styled.div`
@@ -99,6 +127,17 @@ const Votos = styled.div`
     font-size: 2rem;
     font-weight: 700;
   }
+  @media (max-width: 550px) {
+    padding: 5px;
+    div {
+      font-size: 1.3rem;
+    }
+    p {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
 `;
 const ContenedorImagen = styled.div`
   display: flex;
@@ -107,6 +146,12 @@ const ContenedorImagen = styled.div`
   margin-bottom: 10px;
 `;
 
+const Publicado = styled.p`
+margin-bottom: 5px;
+  @media (max-width: 550px) {
+    font-size: 12px;
+  }
+`;
 const DetallesProducto = ({ producto }) => {
   const {
     id,
@@ -148,10 +193,10 @@ const DetallesProducto = ({ producto }) => {
                 <p>{comentarios.length} Comentarios</p>
               </div>
             </Comentarios>
-            <p className="prueba">
+            <Publicado>
               Publicado hace :{" "}
               {formatDistanceToNow(new Date(creado), { locale: es })}
-            </p>
+            </Publicado>
           </div>
         </DescripcionProducto>
         <Votos>

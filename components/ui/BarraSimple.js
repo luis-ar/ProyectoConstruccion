@@ -29,7 +29,7 @@ const Contenedor = styled.div`
     text-decoration: none;
     display: grid;
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     color: black;
   }
   .activo {
