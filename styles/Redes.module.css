@@ -1,6 +1,4 @@
 .contenedor {
-  height: 500px;
-  width: 300px;
   /* margin: 140px 0; */
   position: absolute;
   bottom: 10%;
@@ -10,13 +8,14 @@
 }
 .contenedor ul {
   margin-left: 0;
-  width: 100%;
+  width: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   cursor: pointer;
   position: fixed;
+  right: 0;
 }
 .contenedor ul li {
   position: relative;
