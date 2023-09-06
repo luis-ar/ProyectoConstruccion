@@ -10,7 +10,7 @@ const BarraRedes = () => {
               href="https://instagram.com/inmobiliaria_future?utm_source=qr&igshid=MThlNWY1MzQwNA=="
               target="_blank"
             >
-              <i className="bx bxl-instagram instagram"></i>Instagram
+              <i class="bx bxl-instagram-alt"></i>Instagram
             </a>
           </li>
           <li>
