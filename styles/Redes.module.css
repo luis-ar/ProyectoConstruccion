@@ -30,7 +30,13 @@
   padding-right: 10px;
 }
 .contenedor ul li:hover:nth-child(1) {
-  background-color: #fe180d;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 .contenedor ul li:hover:nth-child(2) {
   background-color: #1531af;
