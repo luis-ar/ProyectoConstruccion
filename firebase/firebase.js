@@ -9,7 +9,7 @@ import {
 import firebaseConfig from "./config";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from '@firebase/storage';
-
+//mejora
 class Firebase {
   constructor() {
     const app = initializeApp(firebaseConfig);
