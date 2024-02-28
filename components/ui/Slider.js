@@ -12,6 +12,7 @@ const Contenedor = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-top: 17vh;
   @media (max-width: 500px) {
     height: 300px;
   }

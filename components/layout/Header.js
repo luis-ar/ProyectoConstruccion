@@ -13,7 +13,7 @@ const ContenedorHeader = styled.div`
   width: 100%;
   margin: 0 auto;
   position: fixed;
-  height: 10vh;
+  height: 15vh;
   border-bottom: 4px solid black;
   z-index: 5;
   top: 0;
@@ -67,7 +67,10 @@ const Header = () => {
             >
               <Logo>
                 <img src="/static/img/logo.png" className="iconoCelular" />
-                <img src="/static/img/future.png" className="iconoEscritorio" />
+                <img
+                  src="/static/img/alboradaIcono1.png"
+                  className="iconoEscritorio"
+                />
               </Logo>
             </Link>
             {/* Buscador aqui */}
@@ -115,7 +118,6 @@ const Header = () => {
                     bgColor="true"
                     css={css`
                       margin-right: 10px !important;
-                      padding: 6px 6px !important;
                     `}
                   >
                     Login
@@ -125,7 +127,6 @@ const Header = () => {
                   <Boton
                     css={css`
                       margin-right: 10px !important;
-                      padding: 6px 6px !important;
                     `}
                   >
                     Crear Cuenta
@@ -137,7 +138,6 @@ const Header = () => {
         </ContenedorHeader>
       </header>
 
-      <SliderBarra />
       <div
         css={css`
           position: fixed;
