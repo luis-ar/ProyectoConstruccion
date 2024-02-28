@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { Global, css } from "@emotion/react";
 import Head from "next/head";
+import Informacion from "../ui/Informacion";
 
 const Layout = (props) => {
   return (
@@ -87,6 +88,7 @@ const Layout = (props) => {
 
       <Header />
       <main>{props.children}</main>
+      <Informacion />
     </>
   );
 };

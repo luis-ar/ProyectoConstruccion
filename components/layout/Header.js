@@ -9,6 +9,8 @@ import { FirebaseContext } from "../../firebase";
 import SliderBarra from "../ui/SliderBarra";
 import BarraSimple from "../ui/BarraSimple";
 import BarraRedes from "../ui/BarraRedes";
+import Informacion from "../ui/Informacion";
+
 const ContenedorHeader = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -137,17 +139,6 @@ const Header = () => {
           </div>
         </ContenedorHeader>
       </header>
-
-      <div
-        css={css`
-          position: fixed;
-          bottom: 0;
-          z-index: 1;
-        `}
-      >
-        <BarraSimple />
-      </div>
-      <BarraRedes />
     </>
   );
 };

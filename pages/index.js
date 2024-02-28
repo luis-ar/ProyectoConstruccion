@@ -5,6 +5,8 @@ import useProductos from "../Hooks/useProductos";
 import Slider from "@/components/ui/Slider";
 import { css } from "@emotion/react";
 import estilos from "@/styles/Nosotros.module.css";
+import styled from "@emotion/styled";
+
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
 
@@ -32,14 +34,20 @@ export default function Home() {
         <div
           css={css`
             margin-top: 20px;
-            margin-bottom: 10vh;
           `}
         >
-          <div>
+          <div
+            css={css`
+              padding: 0 20px;
+            `}
+          >
             <h1
               css={css`
                 text-align: center;
                 font-size: 2.5rem;
+                @media (max-width: 1000px) {
+                  font-size: 1.5rem;
+                }
               `}
             >
               Cada casa tiene una historia, permítenos ser parte de la tuya
@@ -48,6 +56,9 @@ export default function Home() {
                   font-size: 3.5rem;
                   color: #085af0;
                   font-weight: bold;
+                  @media (max-width: 1000px) {
+                    font-size: 2rem;
+                  }
                 `}
               >
                 ¡Encuentra tu próximo hogar con nosotros!
@@ -67,7 +78,7 @@ export default function Home() {
                 font-size: 5rem;
                 font-weight: bold;
                 @media (max-width: 1000px) {
-                  font-size: 3rem;
+                  font-size: 2.3rem;
                 }
               `}
             >
@@ -81,13 +92,35 @@ export default function Home() {
                 </div>
 
                 <div className={`${estilos.face} ${estilos.back}`}>
-                  <h3>LOTES-TERRENOS DE 90m²</h3>
+                  <h3
+                    css={css`
+                      @media (max-width: 400px) {
+                        font-size: 2rem !important;
+                      }
+                    `}
+                  >
+                    LOTES-TERRENOS DE 90m²
+                  </h3>
                   <p>
                     No pierdas la oportunidad de asegurar tu propio espacio en
                     uno de nuestros codiciados lotes. ¡El comienzo de una nueva
                     aventura te espera!
                   </p>
-                  <div className={estilos.link}></div>
+                  <div className={estilos.link}>
+                    <button
+                      css={css`
+                        cursor: pointer;
+                        padding: 10px 20px;
+                        margin-top: 10px;
+                        background-color: #0881df;
+                        color: white;
+                        font-weight: bold;
+                        border-radius: 10px;
+                      `}
+                    >
+                      VER LOTES
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -98,12 +131,34 @@ export default function Home() {
                 </div>
 
                 <div className={`${estilos.face} ${estilos.back}`}>
-                  <h3>LOTES-TERRENOS DE 120m²</h3>
+                  <h3
+                    css={css`
+                      @media (max-width: 400px) {
+                        font-size: 2rem !important;
+                      }
+                    `}
+                  >
+                    LOTES-TERRENOS DE 120m²
+                  </h3>
                   <p>
                     Los sueños toman forma en nuestros lotes. ¡Descubre el lugar
                     donde tu imaginación puede florecer y tu hogar puede crecer!
                   </p>
-                  <div className={estilos.link}></div>
+                  <div className={estilos.link}>
+                    <button
+                      css={css`
+                        cursor: pointer;
+                        padding: 10px 20px;
+                        margin-top: 10px;
+                        background-color: #0881df;
+                        color: white;
+                        font-weight: bold;
+                        border-radius: 10px;
+                      `}
+                    >
+                      VER LOTES
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
@@ -114,10 +169,10 @@ export default function Home() {
               height: 50vh;
               width: 98%;
               border-radius: 10px;
-              background-color: #20c806;
+              background-color: #f5f5f5;
               padding: 0 10px;
               display: flex;
-              @media (max-width: 1000px) {
+              @media (max-width: 400px) {
                 flex-direction: column;
                 align-items: center;
               }
@@ -135,7 +190,7 @@ export default function Home() {
                 src="/static/img/casaDinero.png"
                 css={css`
                   width: 60%;
-                  @media (max-width: 1000px) {
+                  @media (max-width: 400px) {
                     width: 100%;
                   }
                 `}
@@ -149,7 +204,7 @@ export default function Home() {
                 flex-direction: column;
                 padding-top: 15px;
                 justify-content: center;
-                @media (max-width: 1000px) {
+                @media (max-width: 400px) {
                   width: 100%;
                   flex-direction: row;
                 }
@@ -158,10 +213,9 @@ export default function Home() {
               <p
                 css={css`
                   font-size: 3rem;
-                  color: white;
                   font-weight: bold;
                   text-align: center;
-                  @media (max-width: 1000px) {
+                  @media (max-width: 400px) {
                     font-size: 1.2rem;
                   }
                 `}
@@ -183,7 +237,7 @@ export default function Home() {
                   css={css`
                     width: 40%;
                     border-radius: 10px;
-                    @media (max-width: 1000px) {
+                    @media (max-width: 400px) {
                       width: 80%;
                     }
                   `}
