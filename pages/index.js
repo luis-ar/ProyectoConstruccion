@@ -166,12 +166,12 @@ export default function Home() {
           <div
             css={css`
               margin: 0 auto;
-              height: 50vh;
+              height: auto;
               width: 98%;
               border-radius: 10px;
               background-color: #f5f5f5;
-              padding: 0 10px;
               display: flex;
+              flex-direction: column;
               @media (max-width: 400px) {
                 flex-direction: column;
                 align-items: center;
@@ -180,68 +180,117 @@ export default function Home() {
           >
             <div
               css={css`
-                width: 40%;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-              `}
-            >
-              <img
-                src="/static/img/casaDinero.png"
-                css={css`
-                  width: 60%;
-                  @media (max-width: 400px) {
-                    width: 100%;
-                  }
-                `}
-              />
-            </div>
-            <div
-              css={css`
-                width: 60%;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                padding-top: 15px;
-                justify-content: center;
                 @media (max-width: 400px) {
-                  width: 100%;
-                  flex-direction: row;
+                  flex-direction: column;
+                  align-items: center;
                 }
               `}
             >
-              <p
-                css={css`
-                  font-size: 3rem;
-                  font-weight: bold;
-                  text-align: center;
-                  @media (max-width: 400px) {
-                    font-size: 1.2rem;
-                  }
-                `}
-              >
-                Con nuestra oferta especial de preventa, puedes ser propietario
-                de un lote con un descuento del 7%. ¡No esperes más para
-                asegurar tu futuro!
-              </p>
-
               <div
                 css={css`
+                  width: 40%;
                   display: flex;
-                  align-items: center;
                   justify-content: center;
+                  align-items: center;
                 `}
               >
                 <img
-                  src="/static/img/compraCasa.png"
+                  src="/static/img/casaDinero.png"
                   css={css`
-                    width: 40%;
-                    border-radius: 10px;
+                    width: 60%;
                     @media (max-width: 400px) {
-                      width: 80%;
+                      width: 100%;
                     }
                   `}
                 />
+              </div>
+              <div
+                css={css`
+                  width: 60%;
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+                  padding-top: 15px;
+                  justify-content: center;
+                  @media (max-width: 400px) {
+                    width: 100%;
+                    flex-direction: row;
+                  }
+                `}
+              >
+                <p
+                  css={css`
+                    font-size: 3rem;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 0 10px;
+                    @media (max-width: 400px) {
+                      font-size: 1.2rem;
+                    }
+                  `}
+                >
+                  Con nuestra oferta especial de preventa, puedes ser
+                  propietario de un lote con un descuento del 7%. ¡No esperes
+                  más para asegurar tu futuro!
+                </p>
+
+                <div
+                  css={css`
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  `}
+                >
+                  <img
+                    src="/static/img/compraCasa.png"
+                    css={css`
+                      width: 40%;
+                      border-radius: 10px;
+                      @media (max-width: 400px) {
+                        width: 80%;
+                      }
+                    `}
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              css={css`
+                width: 100%;
+              `}
+            >
+              <div
+                css={css`
+                  width: 100%;
+                  background-color: #0881df;
+                  height: 60px;
+                  margin-top: 20px;
+                  border-bottom-left-radius: 10px;
+                  border-bottom-right-radius: 10px;
+                  font-size: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  @media (max-width: 400px) {
+                    font-size: 20px;
+                  }
+                `}
+              >
+                <p>Más detalles</p>
+                <i
+                  className="bx bx-chevrons-right"
+                  css={css`
+                    font-size: 50px;
+                    @media (max-width: 400px) {
+                      font-size: 30px;
+                    }
+                  `}
+                ></i>
               </div>
             </div>
           </div>
