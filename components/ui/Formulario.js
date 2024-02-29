@@ -43,7 +43,7 @@ export const Campo = styled.div`
 `;
 
 export const InputSubmit = styled.input`
-  background-color: var(--naranja);
+  background-color: var(--verde);
   width: 100%;
   padding: 1.5rem;
   text-align: center;
@@ -51,6 +51,7 @@ export const InputSubmit = styled.input`
   font-size: 1.8rem;
   text-transform: uppercase;
   border: none;
+  border-radius: 10px;
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
   margin-bottom: 20px;

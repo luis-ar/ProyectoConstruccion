@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 
 const Informacion = () => {
   const PiePagina = styled.footer`
-    background: #9f8ad0;
+    background: #375e97;
     padding-bottom: 0.1px;
     margin-top: 30px;
     .footer-content {
@@ -95,7 +95,7 @@ const Informacion = () => {
       .contact-us {
         width: 90%;
       }
-      .brand{
+      .brand {
         font-size: 30px;
       }
     }
@@ -104,7 +104,7 @@ const Informacion = () => {
     <PiePagina id="contacto">
       <div className="contenedor1 footer-content">
         <div className="contact-us">
-          <h2 className="brand">CORPORACIÓN FUTURERE SAC</h2>
+          <h2 className="brand">CORPORACIÓN FUTURE SAC</h2>
           <p>
             Expertos en encontrar el hogar perfecto que se adapte a tus
             necesidades y sueños

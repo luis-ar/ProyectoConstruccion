@@ -14,6 +14,7 @@ const Layout = (props) => {
             --gris2: #6f6f6f;
             --gris3: #e1e1e1;
             --naranja: #da552f;
+            --verde: #1da507;
           }
           html {
             font-size: 62.5%;
@@ -61,12 +62,13 @@ const Layout = (props) => {
       />
 
       <Head>
-        <title>Product Hunt Firebase Next</title>
+        <title>Alborada del Sur</title>
 
         <link
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
           rel="stylesheet"
         />
+        <link rel="icon" href="/static/img/alboradaIcono1.png" />
 
         <link
           href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@300;400;700&family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
@@ -87,7 +89,16 @@ const Layout = (props) => {
       </Head>
 
       <Header />
-      <main>{props.children}</main>
+      <main
+        css={css`
+          margin-top: 17vh;
+          @media (max-width: 800px) {
+            margin-top: 13vh;
+          }
+        `}
+      >
+        {props.children}
+      </main>
       <Informacion />
     </>
   );

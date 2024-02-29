@@ -6,6 +6,7 @@ import Slider from "@/components/ui/Slider";
 import { css } from "@emotion/react";
 import estilos from "@/styles/Nosotros.module.css";
 import styled from "@emotion/styled";
+import Router from "next/router";
 
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
@@ -281,7 +282,13 @@ export default function Home() {
                   }
                 `}
               >
-                <p>Más detalles</p>
+                <p
+                  onClick={() => {
+                    Router.push("/Detalles");
+                  }}
+                >
+                  Más detalles
+                </p>
                 <i
                   className="bx bx-chevrons-right"
                   css={css`

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Buscar from "../ui/Buscar";
 import Navegacion from "./Navegacion";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import SliderBarra from "../ui/SliderBarra";
 import BarraSimple from "../ui/BarraSimple";
 import BarraRedes from "../ui/BarraRedes";
 import Informacion from "../ui/Informacion";
+import BarraMenu from "../ui/BarraMenu";
 
 const ContenedorHeader = styled.div`
   width: 100%;
@@ -22,8 +23,14 @@ const ContenedorHeader = styled.div`
   background-color: white;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 800px) {
+    height: 12vh;
+  }
 `;
 const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .iconoEscritorio {
     width: 150px;
     margin-right: 15px;
@@ -41,8 +48,8 @@ const Logo = styled.div`
 
     .iconoCelular {
       display: block;
-      width: 30px;
-      margin-right: 40px;
+      width: 100px;
+      margin-right: 10px;
       margin-left: 5px;
     }
   }
@@ -50,11 +57,13 @@ const Logo = styled.div`
 
 const Header = () => {
   const { usuario, firebase } = useContext(FirebaseContext);
-
+  const [pase, setPase] = useState(false);
   return (
     <>
       <header>
         <ContenedorHeader>
+          {pase && <BarraMenu setPase={setPase} />}
+
           <div
             css={css`
               display: flex;
@@ -68,7 +77,10 @@ const Header = () => {
               }}
             >
               <Logo>
-                <img src="/static/img/logo.png" className="iconoCelular" />
+                <img
+                  src="/static/img/alboradaIcono1.png"
+                  className="iconoCelular"
+                />
                 <img
                   src="/static/img/alboradaIcono1.png"
                   className="iconoEscritorio"
@@ -104,17 +116,17 @@ const Header = () => {
                 >
                   Hola: {usuario.displayName}
                 </p>
-                <Boton
-                  bgColor="true"
-                  onClick={() => {
-                    firebase.cerrarSesion();
-                  }}
-                >
-                  Cerrar Sesion
-                </Boton>
               </>
             ) : (
-              <>
+              <div
+                css={css`
+                  cursor: pointer;
+                  display: none;
+                  @media (min-width: 1000px) {
+                    display: flex;
+                  }
+                `}
+              >
                 <Link href="/Login">
                   <Boton
                     bgColor="true"
@@ -134,8 +146,24 @@ const Header = () => {
                     Crear Cuenta
                   </Boton>
                 </Link>
-              </>
+              </div>
             )}
+
+            <div>
+              <i
+                onClick={() => {
+                  setPase(true);
+                }}
+                className="bx bx-menu"
+                css={css`
+                  font-size: 25px;
+                  cursor: pointer;
+                  @media (min-width: 1000px) {
+                    display: none;
+                  }
+                `}
+              ></i>
+            </div>
           </div>
         </ContenedorHeader>
       </header>

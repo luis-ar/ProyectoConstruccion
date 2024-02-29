@@ -7,12 +7,9 @@ import "@splidejs/splide/css";
 const Contenedor = styled.div`
   width: 100%;
   height: 500px;
-  background: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin-top: 17vh;
   @media (max-width: 500px) {
     height: 300px;
   }
