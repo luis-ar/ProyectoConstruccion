@@ -108,6 +108,7 @@ const Header = () => {
                   css={css`
                     margin-right: 2rem;
                     text-align: center;
+                    font-weight: bold;
                     @media (max-width: 490px) {
                       font-size: 1.1rem;
                       margin-right: 2rem;

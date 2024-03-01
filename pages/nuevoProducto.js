@@ -54,7 +54,6 @@ const nuevoProducto = () => {
     const producto = {
       nombre,
       empresa,
-      url,
       urlimagen,
       descripcion,
       votos: 0,
@@ -68,6 +67,10 @@ const nuevoProducto = () => {
       categoria,
       precio,
       cordenadas,
+      situacion: {
+        estado: "disponible",
+        comprador: "",
+      },
     };
     //insertarlo en la base de datos
     // firebase.db.collection("productos").add(producto);
@@ -114,8 +117,7 @@ const nuevoProducto = () => {
   const { valores, errores, handleSumit, handleChange, handleBlur } =
     useValidacion(STATE_INICIAL, validarCrearProducto, crearProducto);
   //OnBlur -> cuando salgo del input lo valida sin la necesidad de presion el boton de crear cuenta
-  const { nombre, empresa, imagen, url, descripcion, categoria, precio } =
-    valores;
+  const { nombre, empresa, imagen, descripcion, categoria, precio } = valores;
 
   return (
     <div>
@@ -157,12 +159,12 @@ const nuevoProducto = () => {
                 )}
 
                 <Campo>
-                  <label htmlFor="empresa">Empresa</label>
+                  <label htmlFor="empresa">Dirección</label>
                   <input
                     type="text"
                     id="empresa"
                     name="empresa"
-                    placeholder="Nombre Empresa o Compañia"
+                    placeholder="Dirrecion del Lote"
                     value={empresa}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -182,7 +184,9 @@ const nuevoProducto = () => {
                     onChange={handleImageUpload}
                   />
                 </Campo>
-                {errores.url && <ErrorMostrar>{errores.url}</ErrorMostrar>}
+
+                {/*
+               {errores.url && <ErrorMostrar>{errores.url}</ErrorMostrar>}
 
                 <Campo>
                   <label htmlFor="url">URL</label>
@@ -196,12 +200,15 @@ const nuevoProducto = () => {
                     onBlur={handleBlur}
                   />
                 </Campo>
+              
+              */}
+
                 {errores.categoria && (
                   <ErrorMostrar>{errores.categoria}</ErrorMostrar>
                 )}
 
                 <Campo>
-                  <label htmlFor="url">Categoria</label>
+                  <label htmlFor="url">Área</label>
                   <select
                     id="categoria"
                     name="categoria"
@@ -210,14 +217,8 @@ const nuevoProducto = () => {
                     onBlur={handleBlur}
                   >
                     <option value="">-- Seleccione --</option>
-                    <option value="departamento">Departamento</option>
-                    <option value="terreno">Terreno</option>
-                    <option value="casa">Casa</option>
-                    <option value="oficina">Oficina</option>
-                    <option value="localComercial">Local Comercial</option>
-                    <option value="habilitacionUrbana">
-                      Habilitación Urbana
-                    </option>
+                    <option value="90">90m²</option>
+                    <option value="120">120m²</option>
                   </select>
                 </Campo>
                 {errores.precio && (
@@ -237,7 +238,6 @@ const nuevoProducto = () => {
                     onBlur={handleBlur}
                   />
                 </Campo>
-                {console.log(cordenadas)}
                 <Campo>
                   <label htmlFor="url">Ubicación</label>
                   <Mapa>

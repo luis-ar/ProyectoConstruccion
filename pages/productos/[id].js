@@ -21,11 +21,11 @@ import MapPage from "@/components/ui/MapaPrueba";
 import MapaAnimada from "@/components/ui/MapaAnimada";
 
 const ContenedorProducto = styled.div`
-  @media (min-width: 768px) {
+  /* @media (min-width: 800px) {
     display: grid;
     grid-template-columns: 2fr 1fr;
     column-gap: 2rem;
-  }
+  } */
 `;
 const CreadorProducto = styled.p`
   padding: 0.5rem 2rem;
@@ -93,6 +93,7 @@ const Producto = () => {
     haVotado,
     cordenadas,
     categoria,
+    situacion,
   } = producto;
 
   //administrar y validar votos
@@ -168,7 +169,33 @@ const Producto = () => {
     guardarConsultarDB(true); //hay un conentario, por lo tanto consultar a la db
     SetInputComentario("");
   };
+  const cambiarEstado = async (nuevoEstado) => {
+    let nuevaSituacion = {};
+    if (!usuario) {
+      return router.push("/login");
+    }
+    if (nuevoEstado != "disponible") {
+      nuevaSituacion = {
+        estado: nuevoEstado,
+        comprador: usuario.displayName,
+      };
+    } else {
+      nuevaSituacion = {
+        estado: nuevoEstado,
+        comprador: "",
+      };
+    }
 
+    const docRef = doc(firebase.db, "productos", `${id}`);
+    await updateDoc(docRef, {
+      situacion: nuevaSituacion,
+    });
+    guardarProducto({
+      ...producto,
+      situacion: nuevaSituacion,
+    });
+    guardarConsultarDB(true); //hay un conentario, por lo tanto consultar a la db
+  };
   //funcion que revisa que el creador del producto sea el mismo que esta autenticado
   const puedeBorrar = () => {
     if (!usuario) return false;
@@ -207,31 +234,248 @@ const Producto = () => {
               {nombre}
             </h1>
             <ContenedorProducto>
-              <div>
-                <p>
-                  Publicado hace :{" "}
-                  {formatDistanceToNow(new Date(creado), { locale: es })}
-                </p>
-                <p
+              <div
+                css={css`
+                  display: flex;
+                  gap: 20px;
+                  @media (max-width: 800px) {
+                    flex-direction: column;
+                  }
+                `}
+              >
+                <div
                   css={css`
-                    margin-bottom: 10px;
+                    width: 60%;
+                    @media (max-width: 800px) {
+                      width: 100%;
+                    }
                   `}
                 >
-                  Por: {creador.nombre} de {empresa}
-                </p>
-                <img
-                  src={urlimagen}
-                  css={css`
-                    border-radius: 20px;
-                    box-shadow: 0 0 10px 1px black;
-                    margin-bottom: 5px;
-                  `}
-                />
-                <p>{descripcion}</p>
+                  <div
+                    css={css`
+                      display: flex;
+                      justify-content: center;
+                      margin-bottom: 15px;
+                    `}
+                  >
+                    <img
+                      src={urlimagen}
+                      css={css`
+                        border-radius: 20px;
+                        box-shadow: 0 0 10px 1px black;
+                        margin-bottom: 5px;
+                        margin-top: 10px;
+                      `}
+                    />
+                  </div>
 
+                  <p>
+                    Publicado hace :{" "}
+                    {formatDistanceToNow(new Date(creado), { locale: es })}
+                  </p>
+                  <p
+                    css={css`
+                      span {
+                        font-size: 20px;
+                        font-weight: bold;
+                      }
+                    `}
+                  >
+                    Ubicación: <span>{empresa}</span>
+                  </p>
+                  <p
+                    css={css`
+                      span {
+                        font-size: 20px;
+                        font-weight: bold;
+                      }
+                    `}
+                  >
+                    Área: <span>{categoria} m²</span>
+                  </p>
+                  {situacion.comprador && (
+                    <>
+                      <p
+                        css={css`
+                          span {
+                            font-size: 20px;
+                            font-weight: bold;
+                          }
+                        `}
+                      >
+                        Propietario: <span>{situacion.comprador}</span>
+                      </p>
+                    </>
+                  )}
+                  <div
+                    css={css`
+                      background-color: #eeeded;
+                      border-radius: 10px;
+                      border: 1px solid #c2c2c2;
+                      margin-top: 10px;
+                    `}
+                  >
+                    <div
+                      css={css`
+                        text-transform: uppercase;
+                        text-align: center;
+                        background-color: #e6e5e5;
+                        border-top-right-radius: 10px;
+                        border-top-left-radius: 10px;
+                        font-weight: bold;
+                        border-bottom: 1px solid #c2c2c2;
+                        padding: 10px;
+                      `}
+                    >
+                      Descripción
+                    </div>
+                    <div
+                      css={css`
+                        padding: 10px;
+                      `}
+                    >
+                      <p>{descripcion}</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  css={css`
+                    width: 40%;
+                    @media (max-width: 800px) {
+                      width: 100%;
+                    }
+                  `}
+                >
+                  <aside>
+                    <div
+                      css={css`
+                        background-color: ${situacion.estado == "disponible"
+                          ? "#05AC19"
+                          : situacion.estado == "ocupado"
+                          ? "#DD1909"
+                          : "#CD8505"};
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-transform: uppercase;
+                        border-radius: 10px;
+                        color: white;
+                        font-weight: bold;
+                      `}
+                    >
+                      {situacion.estado}
+                    </div>
+                    <div
+                      css={css`
+                        margin-top: 5rem;
+                      `}
+                    >
+                      <p
+                        css={css`
+                          text-align: center;
+                        `}
+                      >
+                        {votos} Votos
+                      </p>
+                      {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
+                    </div>
+                    <div
+                      css={css`
+                        display: flex;
+                        margin-bottom: 15px;
+                        div {
+                          width: 50%;
+                          text-align: center;
+                          cursor: pointer;
+                          height: 40px;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          border: 1px solid grey;
+                          font-weight: bold;
+                          text-transform: uppercase;
+                          :hover {
+                            background-color: #bebcbc;
+                          }
+                          :first-child {
+                            margin-right: 10px;
+                          }
+                        }
+                      `}
+                    >
+                      {situacion.estado == "disponible" ? (
+                        <>
+                          <div
+                            onClick={() => {
+                              cambiarEstado("ocupado");
+                            }}
+                          >
+                            Comprar Lote
+                          </div>
+                          <div
+                            onClick={() => {
+                              cambiarEstado("reservado");
+                            }}
+                          >
+                            Reservar Lote
+                          </div>
+                        </>
+                      ) : situacion.estado == "ocupado" ? (
+                        <>
+                          <div
+                            css={css`
+                              width: 100% !important;
+                            `}
+                            onClick={() => {
+                              cambiarEstado("disponible");
+                            }}
+                          >
+                            Anular Compra
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div
+                            onClick={() => {
+                              cambiarEstado("ocupado");
+                            }}
+                          >
+                            Comprar Lote
+                          </div>
+                          <div
+                            onClick={() => {
+                              cambiarEstado("disponible");
+                            }}
+                          >
+                            Anular Reservar
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    <Mapa>
+                      <MapPage cordenadas={cordenadas} />
+                    </Mapa>
+                  </aside>
+                </div>
+              </div>
+              <div
+                css={css`
+                  width: 60%;
+                  @media (max-width: 800px) {
+                    width: 100%;
+                  }
+                `}
+              >
                 {usuario && (
                   <>
-                    <h2>Agrega tu comentario</h2>
+                    <h2
+                      css={css`
+                        margin-top: 10px;
+                      `}
+                    >
+                      Agrega tu comentario
+                    </h2>
                     <form onSubmit={agregarComentario}>
                       <Campo>
                         <input
@@ -284,33 +528,18 @@ const Producto = () => {
                   </ul>
                 )}
               </div>
-              <aside>
-                <Boton target="_blank" bgColor="true" href={url}>
-                  Visitar URL
-                </Boton>
-
-                <div
-                  css={css`
-                    margin-top: 5rem;
-                  `}
-                >
-                  <p
-                    css={css`
-                      text-align: center;
-                    `}
-                  >
-                    {votos} Votos
-                  </p>
-                  {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
-                </div>
-                <Mapa>
-                  <MapPage cordenadas={cordenadas} />
-                </Mapa>
-                {categoria === "habilitacionUrbana" && <MapaAnimada />}
-              </aside>
             </ContenedorProducto>
             {puedeBorrar() && (
-              <Boton onClick={eliminarProducto}>Eliminar Producto</Boton>
+              <Boton
+                onClick={eliminarProducto}
+                css={css`
+                  :hover {
+                    background-color: #e0e0e0;
+                  }
+                `}
+              >
+                Eliminar Producto
+              </Boton>
             )}
           </div>
         )}

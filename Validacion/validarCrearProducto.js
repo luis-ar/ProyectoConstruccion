@@ -9,16 +9,16 @@ const validarCrearProducto = (valores) => {
 
   //validar empresa
   if (!valores.empresa) {
-    errores.empresa = "El Nombre de la empresa es obligatoria";
+    errores.empresa = "La dirreción es obligatoria";
   }
 
   //validar la url
 
-  if (!valores.url) {
-    errores.url = "La url del producto es obligatoria";
-  } else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(valores.url)) {
-    errores.url = "url mal formateada o no valida";
-  }
+  // if (!valores.url) {
+  //   errores.url = "La url del producto es obligatoria";
+  // } else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(valores.url)) {
+  //   errores.url = "url mal formateada o no valida";
+  // }
 
   //validar descripcion
 
@@ -29,7 +29,7 @@ const validarCrearProducto = (valores) => {
   //validar categoria
 
   if (!valores.categoria) {
-    errores.categoria = "Seleccione una categoria de su producto";
+    errores.categoria = "Seleccione el área de su producto";
   }
 
   //validar categoria
