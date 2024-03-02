@@ -178,11 +178,13 @@ const Producto = () => {
       nuevaSituacion = {
         estado: nuevoEstado,
         comprador: usuario.displayName,
+        idComprador: usuario.uid,
       };
     } else {
       nuevaSituacion = {
         estado: nuevoEstado,
         comprador: "",
+        idComprador: "",
       };
     }
 
@@ -374,6 +376,7 @@ const Producto = () => {
                     <div
                       css={css`
                         margin-top: 5rem;
+                        margin-bottom: 20px;
                       `}
                     >
                       <p
@@ -385,79 +388,88 @@ const Producto = () => {
                       </p>
                       {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
                     </div>
-                    <div
-                      css={css`
-                        display: flex;
-                        margin-bottom: 15px;
-                        div {
-                          width: 50%;
-                          text-align: center;
-                          cursor: pointer;
-                          height: 40px;
+                    {usuario && (
+                      <div
+                        css={css`
                           display: flex;
-                          justify-content: center;
-                          align-items: center;
-                          border: 1px solid grey;
-                          font-weight: bold;
-                          text-transform: uppercase;
-                          :hover {
-                            background-color: #bebcbc;
+                          margin-bottom: 15px;
+                          div {
+                            width: 50%;
+                            text-align: center;
+                            cursor: pointer;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1px solid grey;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            :hover {
+                              background-color: #bebcbc;
+                            }
+                            :first-child {
+                              margin-right: 10px;
+                            }
                           }
-                          :first-child {
-                            margin-right: 10px;
-                          }
-                        }
-                      `}
-                    >
-                      {situacion.estado == "disponible" ? (
-                        <>
-                          <div
-                            onClick={() => {
-                              cambiarEstado("ocupado");
-                            }}
-                          >
-                            Comprar Lote
-                          </div>
-                          <div
-                            onClick={() => {
-                              cambiarEstado("reservado");
-                            }}
-                          >
-                            Reservar Lote
-                          </div>
-                        </>
-                      ) : situacion.estado == "ocupado" ? (
-                        <>
-                          <div
-                            css={css`
-                              width: 100% !important;
-                            `}
-                            onClick={() => {
-                              cambiarEstado("disponible");
-                            }}
-                          >
-                            Anular Compra
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div
-                            onClick={() => {
-                              cambiarEstado("ocupado");
-                            }}
-                          >
-                            Comprar Lote
-                          </div>
-                          <div
-                            onClick={() => {
-                              cambiarEstado("disponible");
-                            }}
-                          >
-                            Anular Reservar
-                          </div>
-                        </>
-                      )}
-                    </div>
+                        `}
+                      >
+                        {situacion.estado == "disponible" ? (
+                          <>
+                            <div
+                              onClick={() => {
+                                cambiarEstado("ocupado");
+                              }}
+                            >
+                              Comprar Lote
+                            </div>
+                            <div
+                              onClick={() => {
+                                cambiarEstado("reservado");
+                              }}
+                            >
+                              Reservar Lote
+                            </div>
+                          </>
+                        ) : situacion.estado == "ocupado" ? (
+                          <>
+                            {usuario.uid == situacion.idComprador && (
+                              <div
+                                css={css`
+                                  width: 100% !important;
+                                `}
+                                onClick={() => {
+                                  cambiarEstado("disponible");
+                                }}
+                              >
+                                Anular Compra
+                              </div>
+                            )}
+                          </>
+                        ) : (
+                          <>
+                            {usuario.uid == situacion.idComprador && (
+                              <>
+                                <div
+                                  onClick={() => {
+                                    cambiarEstado("ocupado");
+                                  }}
+                                >
+                                  Comprar Lote
+                                </div>
+                                <div
+                                  onClick={() => {
+                                    cambiarEstado("disponible");
+                                  }}
+                                >
+                                  Anular Reservar
+                                </div>
+                              </>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    )}
+
                     <Mapa>
                       <MapPage cordenadas={cordenadas} />
                     </Mapa>

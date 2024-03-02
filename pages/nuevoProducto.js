@@ -68,6 +68,7 @@ const nuevoProducto = () => {
       precio,
       cordenadas,
       situacion: {
+        idComprador: "",
         estado: "disponible",
         comprador: "",
       },
