@@ -41,6 +41,7 @@ const filtro = () => {
                     css={css`
                       text-align: center;
                       text-transform: uppercase;
+                      color: white;
                     `}
                   >
                     No hay Lotes

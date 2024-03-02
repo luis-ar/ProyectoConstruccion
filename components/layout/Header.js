@@ -11,13 +11,13 @@ import BarraSimple from "../ui/BarraSimple";
 import BarraRedes from "../ui/BarraRedes";
 import Informacion from "../ui/Informacion";
 import BarraMenu from "../ui/BarraMenu";
+import Router from "next/router";
 
 const ContenedorHeader = styled.div`
   width: 100%;
   margin: 0 auto;
   position: fixed;
   height: 15vh;
-  border-bottom: 4px solid black;
   z-index: 5;
   top: 0;
   background-color: white;
@@ -117,6 +117,19 @@ const Header = () => {
                 >
                   Hola: {usuario.displayName}
                 </p>
+                <Boton
+                  css={css`
+                    margin-right: 10px !important;
+                    background-color: #45e305;
+                    color: white;
+                  `}
+                  onClick={() => {
+                    firebase.cerrarSesion();
+                    Router.push("/Login");
+                  }}
+                >
+                  Cerrar Sesión
+                </Boton>
               </>
             ) : (
               <div

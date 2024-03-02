@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import estilos from "@/styles/Nosotros.module.css";
 import styled from "@emotion/styled";
 import Layout from "@/components/layout/Layout";
+import { css } from "@emotion/react";
 
 const Contenedor = styled.section`
   .imagenLight {
@@ -53,7 +54,7 @@ const nosotros = () => {
   useEffect(() => {}, []);
   return (
     <Layout>
-      <div style={{ margin: "0px" }}>
+      <div style={{ margin: "0px", color: "white" }}>
         <header className={estilos.header} id="inicio">
           <nav className={estilos.menuNavegacion}>
             <a href="#inicio">Inicio</a>
@@ -71,7 +72,12 @@ const nosotros = () => {
         </header>
         <main>
           <section className={`${estilos.services} ${estilos.contenedor1}`}>
-            <h2 className={estilos.subtitulo}>Nuestro Servicio</h2>
+            <h2
+              className={estilos.subtitulo}
+              style={{ fontWeight: "bold", color: "white" }}
+            >
+              Nuestro Servicio
+            </h2>
             <div className={estilos.contenedorServicio}>
               <img src="/static/img/future.png" alt="" />
               <div className={estilos.checklistServicio}>
@@ -110,7 +116,9 @@ const nosotros = () => {
           </section>
           <section className={estilos.gallery} id="portafolio">
             <div className={estilos.contenedor1}>
-              <h2 className={estilos.subtitulo}>Galeria</h2>
+              <h2 className={estilos.subtitulo} style={{ fontWeight: "bold" }}>
+                Galeria
+              </h2>
               <div className={estilos.contenedorGaleria}>
                 <img
                   src="/static/img/imagen1.jpg"
@@ -167,7 +175,14 @@ const nosotros = () => {
           </Contenedor>
 
           <div className={estilos.contenedor1} id="expertos">
-            <h2 className={estilos.subtitulo}>Expertos en:</h2>
+            <h2
+              className={estilos.subtitulo}
+              css={css`
+                color: white;
+              `}
+            >
+              Expertos en:
+            </h2>
             <section className={estilos.experts}>
               <div className={estilos.card}>
                 <div className={`${estilos.face} ${estilos.front}`}>

@@ -41,11 +41,18 @@ const crearCuenta = () => {
             css={css`
               text-align: center;
               margin-top: 5rem;
+              color: white;
             `}
           >
             Crear Cuenta
           </h1>
-          <Formulario onSubmit={handleSumit} noValidate>
+          <Formulario
+            onSubmit={handleSumit}
+            noValidate
+            css={css`
+              color: white;
+            `}
+          >
             {errores.nombre && <ErrorMostrar>{errores.nombre}</ErrorMostrar>}
 
             <Campo>

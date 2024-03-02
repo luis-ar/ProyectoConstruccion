@@ -3,6 +3,8 @@ import Layout from "../components/layout/Layout";
 import { useRouter } from "next/router";
 import DetallesProducto from "../components/layout/DetallesProducto";
 import useProductos from "../Hooks/useProductos";
+import SliderBarra from "@/components/ui/SliderBarra";
+import { css } from "@emotion/react";
 const buscar = () => {
   //leer lo q me manda del querry en el link
 
@@ -26,12 +28,30 @@ const buscar = () => {
   return (
     <div>
       <Layout>
+        <SliderBarra />
+
         <div className="listado-productos">
           <div className="contenedor">
-            <ul className="bg-white">
-              {resultado.map((producto) => (
-                <DetallesProducto key={producto.id} producto={producto} />
-              ))}
+            <ul className="">
+              {resultado.length == 0 ? (
+                <>
+                  <h1
+                    css={css`
+                      text-align: center;
+                      text-transform: uppercase;
+                      color: white;
+                    `}
+                  >
+                    No hay Lotes
+                  </h1>
+                </>
+              ) : (
+                <>
+                  {resultado.map((producto) => (
+                    <DetallesProducto key={producto.id} producto={producto} />
+                  ))}
+                </>
+              )}
             </ul>
           </div>
         </div>

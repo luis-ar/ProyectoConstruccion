@@ -10,6 +10,7 @@ const Contenedor = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #045776;
   @media (max-width: 500px) {
     height: 300px;
   }
@@ -45,7 +46,10 @@ const Slider = () => {
             <Image src="/static/img/familia.jpg" alt="Picture of the author" />
           </SplideSlide>
           <SplideSlide>
-            <Image src="/static/img/casa.jpg" alt="Picture of the author" />
+            <Image
+              src="/static/img/casaFutura.jpg"
+              alt="Picture of the author"
+            />
           </SplideSlide>
           <SplideSlide>
             <Image

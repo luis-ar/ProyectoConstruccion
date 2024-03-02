@@ -18,7 +18,7 @@ export default function populares() {
 
         <div className="listado-productos">
           <div className="contenedor">
-            <ul className="bg-white">
+            <ul>
               {productos.map((producto) => (
                 <DetallesProducto key={producto.id} producto={producto} />
               ))}

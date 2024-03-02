@@ -131,11 +131,18 @@ const nuevoProducto = () => {
               css={css`
                 text-align: center;
                 margin-top: 5rem;
+                color: white;
               `}
             >
               Nuevo Producto
             </h1>
-            <Formulario onSubmit={handleSumit} noValidate>
+            <Formulario
+              onSubmit={handleSumit}
+              noValidate
+              css={css`
+                color: white;
+              `}
+            >
               <fieldset>
                 <legend>Información General</legend>
 

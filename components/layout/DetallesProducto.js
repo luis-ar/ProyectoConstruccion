@@ -3,13 +3,15 @@ import styled from "@emotion/styled";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { es } from "date-fns/locale";
 import Link from "next/link";
+import { css, keyframes } from "@emotion/react";
+
 const Producto = styled.li`
   padding: 4rem;
   border-radius: 20px;
-  border: 5px solid #d4d3d2;
+  border: 5px solid #046d87;
   margin-bottom: 7px;
-  background-color: white;
-
+  background-color: #f9b40a;
+  color: white;
   :last-child {
     margin-bottom: 5px;
   }
@@ -37,7 +39,6 @@ const DescripcionProducto = styled.div`
 const Titulo = styled.a`
   font-size: 2rem;
   font-weight: bold;
-  color: black;
   margin: 0;
   :hover {
     cursor: pointer;
@@ -51,6 +52,7 @@ const Precio = styled.p`
   font-size: 30px;
   font-weight: bold;
   margin-top: 5px;
+
   span {
     font-size: 15px;
   }
@@ -65,7 +67,7 @@ const Precio = styled.p`
 const TextoDescripcion = styled.p`
   font-size: 1.6rem;
   margin: 0;
-  color: #888;
+  color: black;
   @media (max-width: 550px) {
     font-size: 1.2rem;
   }
@@ -116,7 +118,7 @@ const Imagen = styled.img`
 const Votos = styled.div`
   flex: 0 0 auto;
   text-align: center;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #046d87;
   padding: 1rem 3rem;
   div {
     font-size: 2rem;
@@ -180,7 +182,13 @@ const DetallesProducto = ({ producto }) => {
             <Imagen src={urlimagen} />
           </ContenedorImagen>
           <div>
-            <Link href="/productos/[id]" as={`/productos/${id}`}>
+            <Link
+              href="/productos/[id]"
+              as={`/productos/${id}`}
+              css={css`
+                color: white;
+              `}
+            >
               <Titulo>{nombre}</Titulo>
             </Link>
             <TextoDescripcion>{descripcion}</TextoDescripcion>

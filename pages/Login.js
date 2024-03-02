@@ -39,11 +39,18 @@ const Login = () => {
             css={css`
               text-align: center;
               margin-top: 5rem;
+              color: white;
             `}
           >
             Iniciar Sesión
           </h1>
-          <Formulario onSubmit={handleSumit} noValidate>
+          <Formulario
+            onSubmit={handleSumit}
+            noValidate
+            css={css`
+              color: white;
+            `}
+          >
             {errores.email && <ErrorMostrar>{errores.email}</ErrorMostrar>}
 
             <Campo>

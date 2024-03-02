@@ -231,6 +231,7 @@ const Producto = () => {
             className="contenedor"
             css={css`
               padding-top: 0 !important;
+              color: white;
             `}
           >
             <h1
@@ -253,6 +254,7 @@ const Producto = () => {
                 <div
                   css={css`
                     width: 60%;
+                    color: white;
                     @media (max-width: 800px) {
                       width: 100%;
                     }
@@ -316,22 +318,24 @@ const Producto = () => {
                   )}
                   <div
                     css={css`
-                      background-color: #eeeded;
+                      background-color: #46cefe;
                       border-radius: 10px;
-                      border: 1px solid #c2c2c2;
+                      border: 1px solid #055e7e;
                       margin-top: 10px;
+                      color: white;
                     `}
                   >
                     <div
                       css={css`
                         text-transform: uppercase;
                         text-align: center;
-                        background-color: #e6e5e5;
+                        background-color: #0790c0;
                         border-top-right-radius: 10px;
                         border-top-left-radius: 10px;
                         font-weight: bold;
-                        border-bottom: 1px solid #c2c2c2;
+                        border-bottom: 1px solid #055e7e;
                         padding: 10px;
+                        color: white;
                       `}
                     >
                       Descripción
@@ -384,9 +388,11 @@ const Producto = () => {
                           text-align: center;
                         `}
                       >
-                        {votos} Votos
+                        {votos} ME GUSTA
                       </p>
-                      {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
+                      {usuario && (
+                        <Boton onClick={votarProducto}>mE GUSTA </Boton>
+                      )}
                     </div>
                     {usuario && (
                       <div
@@ -404,8 +410,10 @@ const Producto = () => {
                             border: 1px solid grey;
                             font-weight: bold;
                             text-transform: uppercase;
+                            background-color: #04729a;
+                            color: white;
                             :hover {
-                              background-color: #bebcbc;
+                              background-color: #046487;
                             }
                             :first-child {
                               margin-right: 10px;

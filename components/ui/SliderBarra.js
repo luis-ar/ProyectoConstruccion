@@ -20,6 +20,8 @@ const Lista = styled.div`
   }
 `;
 const Content = styled.div`
+  background-color: #0590b2;
+  color: white;
   .css-qen1cq-SliderBarra {
     height: auto;
   }
@@ -40,7 +42,7 @@ const Content = styled.div`
 
     li {
       :hover {
-        background-color: #f0f0f0;
+        background-color: #03809f;
       }
     }
   }

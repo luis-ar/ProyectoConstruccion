@@ -29,11 +29,7 @@ export default function Home() {
       <Layout>
         <Slider />
 
-        <div
-          css={css`
-            margin-top: 20px;
-          `}
-        >
+        <div css={css``}>
           <div
             css={css`
               padding: 0 20px;
@@ -42,7 +38,11 @@ export default function Home() {
             <h1
               css={css`
                 text-align: center;
-                font-size: 2.5rem;
+                font-size: 3.5rem;
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                color: white;
                 @media (max-width: 1000px) {
                   font-size: 1.5rem;
                 }
@@ -51,8 +51,8 @@ export default function Home() {
               Cada casa tiene una historia, permítenos ser parte de la tuya
               <p
                 css={css`
-                  font-size: 3.5rem;
-                  color: #085af0;
+                  font-size: 4rem;
+                  color: #3bc4f8;
                   font-weight: bold;
                   @media (max-width: 1000px) {
                     font-size: 2rem;
@@ -75,6 +75,7 @@ export default function Home() {
               css={css`
                 font-size: 5rem;
                 font-weight: bold;
+                color: white;
                 @media (max-width: 1000px) {
                   font-size: 2.3rem;
                 }
@@ -173,7 +174,7 @@ export default function Home() {
               height: auto;
               width: 98%;
               border-radius: 10px;
-              background-color: #f5f5f5;
+              background-color: #75d9fc;
               display: flex;
               flex-direction: column;
               @media (max-width: 400px) {
@@ -185,6 +186,7 @@ export default function Home() {
             <div
               css={css`
                 display: flex;
+
                 @media (max-width: 400px) {
                   flex-direction: column;
                   align-items: center;
@@ -229,6 +231,9 @@ export default function Home() {
                     font-weight: bold;
                     text-align: center;
                     padding: 0 10px;
+                    font-family: "Madimi One", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
                     @media (max-width: 400px) {
                       font-size: 1.2rem;
                     }

@@ -86,12 +86,24 @@ const Layout = (props) => {
           src="https://kit.fontawesome.com/9199bd82d8.js"
           crossorigin="anonymous"
         ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Anton&family=Madimi+One&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <Header />
       <main
         css={css`
           margin-top: 17vh;
+          background-color: #045776;
           @media (max-width: 800px) {
             margin-top: 13vh;
           }
