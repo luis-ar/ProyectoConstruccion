@@ -95,7 +95,19 @@ const BarraMenu = ({ setPase }) => {
                 </div>
               </>
             )}
-
+            {usuario && usuario.email == "adminalborada@gmail.com" && (
+              <>
+                <div
+                  onClick={() => {
+                    handleOpciones("/nuevoProducto");
+                    setPase(false);
+                  }}
+                >
+                  <i className="bx bxs-plus-circle"></i>
+                  <p>Nuevo Producto</p>
+                </div>
+              </>
+            )}
             <div
               onClick={() => {
                 handleOpciones("/");
@@ -104,7 +116,12 @@ const BarraMenu = ({ setPase }) => {
             >
               <i className="bx bxs-home-heart"></i> <p>Inicio</p>
             </div>
-            <div>
+            <div
+              onClick={() => {
+                handleOpciones("/Lotes");
+                setPase(false);
+              }}
+            >
               <i className="bx bxs-institution"></i> <p>Lotes</p>
             </div>
             <div
@@ -130,7 +147,7 @@ const BarraMenu = ({ setPase }) => {
                   onClick={() => {
                     firebase.cerrarSesion();
                     setPase(false);
-                    handleOpciones("/");
+                    handleOpciones("/Login");
                   }}
                 >
                   <i className="bx bxs-log-in-circle"></i> <p>Cerrar Sesión</p>

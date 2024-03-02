@@ -123,7 +123,7 @@ const Header = () => {
                 css={css`
                   cursor: pointer;
                   display: none;
-                  @media (min-width: 1000px) {
+                  @media (min-width: 1200px) {
                     display: flex;
                   }
                 `}
@@ -159,7 +159,7 @@ const Header = () => {
                 css={css`
                   font-size: 25px;
                   cursor: pointer;
-                  @media (min-width: 1000px) {
+                  @media (min-width: 1200px) {
                     display: none;
                   }
                 `}

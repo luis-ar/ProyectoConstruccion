@@ -225,7 +225,12 @@ const Producto = () => {
         {error ? (
           <Error404 />
         ) : (
-          <div className="contenedor">
+          <div
+            className="contenedor"
+            css={css`
+              padding-top: 0 !important;
+            `}
+          >
             <h1
               css={css`
                 text-align: center;

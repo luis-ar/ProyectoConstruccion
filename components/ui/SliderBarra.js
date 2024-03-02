@@ -20,7 +20,6 @@ const Lista = styled.div`
   }
 `;
 const Content = styled.div`
-  margin-top: 10vh;
   .css-qen1cq-SliderBarra {
     height: auto;
   }
@@ -91,7 +90,7 @@ const SliderBarra = () => {
             gap: 10,
             pagination: false,
             isNavigation: true,
-            perPage: 4,
+            perPage: 3,
             arrows: true,
             focus: "center",
             perMove: 1,
@@ -102,14 +101,14 @@ const SliderBarra = () => {
             <Lista
               className={`div-box ${activeDiv == 1 ? "nuevo" : ""}`}
               onClick={() => {
-                guardarFiltro("casa");
+                guardarFiltro("disponible");
                 handleDivClick("1");
                 localStorage.setItem("indice", "1");
               }}
             >
               <div>
                 <i className="bx bxs-home-alt-2"></i>
-                <h2>Casa</h2>
+                <h2>Disponibles</h2>
               </div>
             </Lista>
           </SplideSlide>
@@ -117,13 +116,13 @@ const SliderBarra = () => {
             <Lista
               className={`div-box ${activeDiv == 2 ? "nuevo" : ""}`}
               onClick={() => {
-                guardarFiltro("oficina");
+                guardarFiltro("reservado");
                 handleDivClick("2");
                 localStorage.setItem("indice", "2");
               }}
             >
               <div>
-                <i className="bx bxs-business"></i> <h2>Oficina</h2>
+                <i className="bx bxs-business"></i> <h2>Reservados</h2>
               </div>
             </Lista>
           </SplideSlide>
@@ -131,50 +130,12 @@ const SliderBarra = () => {
             <Lista
               className={`div-box ${activeDiv == 3 ? "nuevo" : ""}`}
               onClick={() => {
-                guardarFiltro("localComercial");
+                guardarFiltro("ocupado");
                 handleDivClick("3");
                 localStorage.setItem("indice", "3");
               }}
             >
-              <i className="bx bxs-store-alt"></i> <h2>Local Comercial</h2>
-            </Lista>
-          </SplideSlide>
-          <SplideSlide>
-            <Lista
-              className={`div-box ${activeDiv == 4 ? "nuevo" : ""}`}
-              onClick={() => {
-                guardarFiltro("departamento");
-                handleDivClick("4");
-                localStorage.setItem("indice", "4");
-              }}
-            >
-              <i className="bx bxs-building-house"></i>
-              <h2>Departamento</h2>
-            </Lista>
-          </SplideSlide>
-          <SplideSlide>
-            <Lista
-              className={`div-box ${activeDiv == 5 ? "nuevo" : ""}`}
-              onClick={() => {
-                guardarFiltro("terreno");
-                handleDivClick("5");
-                localStorage.setItem("indice", "5");
-              }}
-            >
-              <i className="bx bxs-landmark"></i> <h2>Terreno</h2>
-            </Lista>
-          </SplideSlide>
-          <SplideSlide>
-            <Lista
-              className={`div-box ${activeDiv == 6 ? "nuevo" : ""}`}
-              onClick={() => {
-                guardarFiltro("habilitacionUrbana");
-                handleDivClick("6");
-                localStorage.setItem("indice", "6");
-              }}
-            >
-              <i className="bx bxs-map"></i>
-              <h2>Habilitación Urbana</h2>
+              <i className="bx bxs-store-alt"></i> <h2>Ocupados</h2>
             </Lista>
           </SplideSlide>
         </Splide>

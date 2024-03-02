@@ -16,7 +16,7 @@ const Nav = styled.nav`
     &:last-of-type {
       margin-right: 0rem;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
       display: none;
     }
   }
@@ -34,13 +34,43 @@ const Navegacion = () => {
       >
         Inicio
       </Link>
-      <Link href="/populares">Populares</Link>
-      {usuario && (
+      <Link
+        href="/Lotes"
+        onClick={() => {
+          localStorage.clear();
+        }}
+      >
+        Lotes
+      </Link>
+      <Link
+        href="/populares"
+        onClick={() => {
+          localStorage.clear();
+        }}
+      >
+        Populares
+      </Link>
+
+      {usuario && usuario.email == "adminalborada@gmail.com" && (
         <>
-          <Link href="/nuevoProducto">Nuevo Producto</Link>
+          <Link
+            href="/nuevoProducto"
+            onClick={() => {
+              localStorage.clear();
+            }}
+          >
+            Nuevo Producto
+          </Link>
         </>
       )}
-      <Link href="/nosotros">Nosotros</Link>
+      <Link
+        href="/nosotros"
+        onClick={() => {
+          localStorage.clear();
+        }}
+      >
+        Nosotros
+      </Link>
     </Nav>
   );
 };

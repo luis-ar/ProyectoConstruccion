@@ -146,7 +146,7 @@ const ContenedorImagen = styled.div`
 `;
 
 const Publicado = styled.p`
-margin-bottom: 5px;
+  margin-bottom: 5px;
   @media (max-width: 550px) {
     font-size: 12px;
   }
@@ -163,6 +163,7 @@ const DetallesProducto = ({ producto }) => {
     urlimagen,
     votos,
     precio,
+    categoria,
   } = producto;
 
   const formatearPresupuesto = (cantidad) => {
@@ -185,6 +186,9 @@ const DetallesProducto = ({ producto }) => {
             <TextoDescripcion>{descripcion}</TextoDescripcion>
             <Precio>
               <span>Precio: </span> {formatearPresupuesto(parseInt(precio))}
+            </Precio>
+            <Precio>
+              <span>Área: </span> {categoria}m²
             </Precio>
             <Comentarios>
               <div>

@@ -7,7 +7,6 @@ import { css } from "@emotion/react";
 import estilos from "@/styles/Nosotros.module.css";
 import styled from "@emotion/styled";
 import Router from "next/router";
-
 // npm i @emotion/core @emotio/styled babel-plugin-emotion @emotion/babel-preset-css-prop
 // npm install @emotion/core @emotion/styled babel-plugin-emotion @emotion/babel-preset-css-prop @babel-core @emotion/react –save
 
@@ -18,19 +17,17 @@ export default function Home() {
     (item) => item.categoria !== "habilitacionUrbana"
   );
 
+  const seleccionarLote = (filtro) => {
+    Router.push({
+      pathname: "/filtro",
+      query: { q: filtro },
+    });
+  };
+
   return (
     <div>
       <Layout>
         <Slider />
-        {/* <div className="listado-productos">
-          <div className="contenedor">
-            <ul >
-              {datosFiltrados.map((producto) => (
-                <DetallesProducto key={producto.id} producto={producto} />
-              ))}
-            </ul>
-          </div>
-        </div> */}
 
         <div
           css={css`
@@ -109,6 +106,9 @@ export default function Home() {
                   </p>
                   <div className={estilos.link}>
                     <button
+                      onClick={() => {
+                        seleccionarLote("90");
+                      }}
                       css={css`
                         cursor: pointer;
                         padding: 10px 20px;
@@ -156,6 +156,9 @@ export default function Home() {
                         font-weight: bold;
                         border-radius: 10px;
                       `}
+                      onClick={() => {
+                        seleccionarLote("120");
+                      }}
                     >
                       VER LOTES
                     </button>
@@ -269,7 +272,7 @@ export default function Home() {
                   margin-top: 20px;
                   border-bottom-left-radius: 10px;
                   border-bottom-right-radius: 10px;
-                  font-size: 40px;
+                  font-size: 30px;
                   display: flex;
                   align-items: center;
                   justify-content: center;

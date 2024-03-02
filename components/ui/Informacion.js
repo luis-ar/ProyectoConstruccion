@@ -122,28 +122,28 @@ const Informacion = () => {
         <div className="social-media">
           <a
             target="_blank"
-            href="https://goo.gl/maps/PXo8dJAT9NnDjSzP6"
+            href="https://www.tiktok.com/@alboradasur?is_from_webapp=1&sender_device=pc"
             className="social-media-icon"
           >
-            <i className="bx bx-map"></i>
+            <i className="bx bxl-tiktok"></i>
           </a>
           <a
             target="_blank"
-            href="https://www.facebook.com/profile.php?id=100091853778009"
+            href="https://www.facebook.com/profile.php?id=61557021117607"
             className="social-media-icon"
           >
             <i className="bx bxl-facebook"></i>
           </a>
           <a
             target="_blank"
-            href="https://twitter.com/Expense1Manager"
+            href="https://twitter.com/AlboradaSur"
             className="social-media-icon"
           >
             <i className="bx bxl-twitter"></i>
           </a>
           <a
             target="_blank"
-            href="https://instagram.com/expen.semanager?igshid=ZDdkNTZiNTM="
+            href="https://www.instagram.com/renaceralborada/"
             className="social-media-icon"
           >
             <i className="bx bxl-instagram"></i>
