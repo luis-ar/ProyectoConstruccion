@@ -22,7 +22,7 @@ const Detalles = () => {
     {
       img: "areaVerde.jpg",
       nombre: "Espacios Verdes y Áreas de Descanso",
-      inf: "Contamo con extensos espacios verdes y áreas de descanso donde puedes disfrutar de la tranquilidad y la belleza de la naturaleza. Desde caminatas matutinas hasta picnics familiares, estos espacios están diseñados para brindarte momentos de paz y serenidad en medio de la vida urbana.",
+      inf: "Contamos con extensos espacios verdes y áreas de descanso donde puedes disfrutar de la tranquilidad y la belleza de la naturaleza. Desde caminatas matutinas hasta picnics familiares, estos espacios están diseñados para brindarte momentos de paz y serenidad en medio de la vida urbana.",
     },
   ];
   return (
