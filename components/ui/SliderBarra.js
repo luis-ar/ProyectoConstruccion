@@ -91,7 +91,7 @@ const SliderBarra = () => {
             pagination: false,
             isNavigation: true,
             perPage: 3,
-            arrows: true,
+            arrows: false,
             focus: "center",
             perMove: 1,
             lazyLoad: false,
