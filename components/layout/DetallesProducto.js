@@ -10,7 +10,7 @@ const Producto = styled.li`
   border-radius: 20px;
   border: 5px solid #046d87;
   margin-bottom: 7px;
-  background-color: #FFD700;
+  background-color: #ffa500;
   color: white;
   :last-child {
     margin-bottom: 5px;

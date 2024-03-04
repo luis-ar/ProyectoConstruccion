@@ -271,6 +271,9 @@ export default function Home() {
               `}
             >
               <div
+                onClick={() => {
+                  Router.push("/Detalles");
+                }}
                 css={css`
                   width: 100%;
                   background-color: #ffa500;
@@ -291,13 +294,7 @@ export default function Home() {
                   }
                 `}
               >
-                <p
-                  onClick={() => {
-                    Router.push("/Detalles");
-                  }}
-                >
-                  Más detalles
-                </p>
+                <p>Más detalles</p>
                 <i
                   className="bx bx-chevrons-right"
                   css={css`

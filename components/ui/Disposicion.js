@@ -10,6 +10,7 @@ const Disposicion = ({ lugar }) => {
         margin: 30px;
         border-bottom: 1px solid gray;
         padding-bottom: 20px;
+        color: white;
         :last-child {
           border-bottom: none;
         }

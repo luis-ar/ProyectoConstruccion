@@ -27,7 +27,11 @@ const Detalles = () => {
   ];
   return (
     <Layout>
-      <div>
+      <div
+        css={css`
+          color: white;
+        `}
+      >
         <h1
           css={css`
             text-align: center;
@@ -41,8 +45,8 @@ const Detalles = () => {
         <p
           css={css`
             text-align: justify;
-            background-color: #f5f5f5;
-            color: black;
+            background-color: #047893;
+            border-radius: 20px;
             padding: 10px 30px;
             margin: 0 20px;
             font-size: 20px;
@@ -68,7 +72,7 @@ const Detalles = () => {
           margin-top: 20px;
           font-size: 30px;
           font-weight: bold;
-          color: #9f8ad0;
+          color: #ffa500;
           @media (max-width: 600px) {
             font-size: 15px;
           }
