@@ -174,7 +174,7 @@ export default function Home() {
               height: auto;
               width: 98%;
               border-radius: 10px;
-              background-color: #75d9fc;
+              background-color: #038bab;
               display: flex;
               flex-direction: column;
               @media (max-width: 400px) {
@@ -228,12 +228,13 @@ export default function Home() {
                 <p
                   css={css`
                     font-size: 3rem;
-                    font-weight: bold;
                     text-align: center;
                     padding: 0 10px;
-                    font-family: "Madimi One", sans-serif;
+                    text-transform: uppercase;
+                    font-family: "Abril Fatface", serif;
                     font-weight: 400;
                     font-style: normal;
+                    color: white;
                     @media (max-width: 400px) {
                       font-size: 1.2rem;
                     }
@@ -272,7 +273,7 @@ export default function Home() {
               <div
                 css={css`
                   width: 100%;
-                  background-color: #0881df;
+                  background-color: #ffa500;
                   height: 60px;
                   margin-top: 20px;
                   border-bottom-left-radius: 10px;

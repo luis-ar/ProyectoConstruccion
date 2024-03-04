@@ -6,7 +6,6 @@ const Informacion = () => {
   const PiePagina = styled.footer`
     background: #375e97;
     padding-bottom: 0.1px;
-    margin-top: 30px;
     .footer-content {
       display: flex;
       justify-content: space-between;

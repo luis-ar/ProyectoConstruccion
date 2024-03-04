@@ -26,7 +26,7 @@ const Content = styled.div`
     height: auto;
   }
   .nuevo {
-    background-color: #eaeae9 !important;
+    background-color: #0482a0 !important;
     border-bottom: 6px solid black !important;
   }
   .splide__arrows {
@@ -89,7 +89,6 @@ const SliderBarra = () => {
           aria-label="My Favorite Images"
           options={{
             drag: true,
-            gap: 10,
             pagination: false,
             isNavigation: true,
             perPage: 3,
